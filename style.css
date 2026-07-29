@@ -33,7 +33,6 @@
   --card-bg: #f6ecd9;
   --ink: #2b3a2c;
   --muted: #74805f;
-  --panel-line: rgba(35, 64, 47, 0.12);
   --shadow: rgba(35, 64, 47, 0.35);
 }
 
@@ -44,7 +43,6 @@
     --card-bg: #24382a;
     --ink: #f2ead5;
     --muted: #b7c2a1;
-    --panel-line: rgba(232, 163, 61, 0.18);
     --shadow: rgba(0, 0, 0, 0.5);
   }
 }
@@ -55,7 +53,6 @@
   --card-bg: #24382a;
   --ink: #f2ead5;
   --muted: #b7c2a1;
-  --panel-line: rgba(232, 163, 61, 0.18);
   --shadow: rgba(0, 0, 0, 0.5);
 }
 
@@ -65,7 +62,6 @@
   --card-bg: #f6ecd9;
   --ink: #2b3a2c;
   --muted: #74805f;
-  --panel-line: rgba(35, 64, 47, 0.12);
   --shadow: rgba(35, 64, 47, 0.35);
 }
 
@@ -321,7 +317,7 @@ section h2 {
 
 .grammar-box {
   position: relative;
-  background: repeating-linear-gradient(135deg, var(--panel-line) 0 2px, transparent 2px 14px), transparent;
+  background: transparent;
   border: 1.5px solid var(--gold);
   border-radius: 14px;
   padding: 1rem 1.15rem;
