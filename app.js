@@ -14,7 +14,7 @@ function pickRandomN(array, n) {
 }
 
 function renderCard(topic, vocab, grammar) {
-  document.getElementById("category").textContent = topic.category;
+  document.getElementById("category").textContent = "\u{1F343} " + topic.category;
   document.getElementById("topic-title").textContent = topic.title;
 
   const cueList = document.getElementById("cue-card");
@@ -53,7 +53,7 @@ function populateTopicSelect() {
 
   const randomOption = document.createElement("option");
   randomOption.value = "";
-  randomOption.textContent = "🎲 Random topic";
+  randomOption.textContent = "🌱 Random plot";
   select.appendChild(randomOption);
 
   const categories = [...new Set(TOPICS.map((t) => t.category))];
@@ -80,7 +80,7 @@ function getSelectedTopic() {
 
 function generatePracticeCard() {
   const topic = getSelectedTopic();
-  const vocab = pickRandomN(topic.vocabulary, 4);
+  const vocab = pickRandomN(CATEGORY_VOCAB[topic.category], 4);
   const grammar = pickRandom(GRAMMAR_STRUCTURES);
   renderCard(topic, vocab, grammar);
 }

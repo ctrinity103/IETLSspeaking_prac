@@ -1,25 +1,17 @@
 @font-face {
-  font-family: "Caveat";
+  font-family: "Fredoka";
   font-style: normal;
-  font-weight: 500 800;
+  font-weight: 500 700;
   font-display: swap;
-  src: url("fonts/caveat.woff2") format("woff2");
+  src: url("fonts/fredoka.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "IBM Plex Mono";
+  font-family: "Alegreya";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("fonts/ibm-plex-mono-400.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "IBM Plex Mono";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url("fonts/ibm-plex-mono-600.woff2") format("woff2");
+  src: url("fonts/alegreya.woff2") format("woff2");
 }
 
 @font-face {
@@ -31,63 +23,58 @@
 }
 
 /*
-  Concept: a typed IELTS cue card taped to a classroom board.
-  Light theme = whiteboard + red marker. Dark theme = chalkboard + yellow chalk.
+  Concept: Solarpunk greenhouse. Vocabulary is "seeds to plant", grammar is
+  a "growth pattern". Light theme = daylight greenhouse; dark theme = the
+  same greenhouse at dusk, lit by warm solar lanterns rather than a cold
+  inverted palette.
 */
 
 :root {
   color-scheme: light dark;
-  --board: #eef1ec;
-  --board-line: rgba(70, 90, 80, 0.08);
-  --card-bg: #fdfcf7;
-  --ink: #262420;
-  --muted: #7a7568;
-  --accent: #cc4b3c;
-  --accent-ink: #ffffff;
-  --tape: rgba(230, 196, 84, 0.55);
-  --border: #ddd6c4;
-  --shadow: rgba(30, 40, 35, 0.16);
+  --soil: #23402f;
+  --gold: #e8a33d;
+  --terracotta: #c8623c;
+  --leaf: #6f9463;
+
+  --bg-a: #fdf6e6;
+  --bg-b: #eef0d0;
+  --card-bg: #f6ecd9;
+  --ink: #2b3a2c;
+  --muted: #74805f;
+  --panel-line: rgba(35, 64, 47, 0.12);
+  --shadow: rgba(35, 64, 47, 0.35);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --board: #142720;
-    --board-line: rgba(255, 255, 255, 0.045);
-    --card-bg: #f6f1e3;
-    --ink: #2a2620;
-    --muted: #83795f;
-    --accent: #f2c14e;
-    --accent-ink: #2a2110;
-    --tape: rgba(242, 193, 78, 0.4);
-    --border: #e4dcc2;
-    --shadow: rgba(0, 0, 0, 0.45);
+    --bg-a: #16281e;
+    --bg-b: #0f1f16;
+    --card-bg: #24382a;
+    --ink: #f2ead5;
+    --muted: #b7c2a1;
+    --panel-line: rgba(232, 163, 61, 0.18);
+    --shadow: rgba(0, 0, 0, 0.5);
   }
 }
 
 :root[data-theme="dark"] {
-  --board: #142720;
-  --board-line: rgba(255, 255, 255, 0.045);
-  --card-bg: #f6f1e3;
-  --ink: #2a2620;
-  --muted: #83795f;
-  --accent: #f2c14e;
-  --accent-ink: #2a2110;
-  --tape: rgba(242, 193, 78, 0.4);
-  --border: #e4dcc2;
-  --shadow: rgba(0, 0, 0, 0.45);
+  --bg-a: #16281e;
+  --bg-b: #0f1f16;
+  --card-bg: #24382a;
+  --ink: #f2ead5;
+  --muted: #b7c2a1;
+  --panel-line: rgba(232, 163, 61, 0.18);
+  --shadow: rgba(0, 0, 0, 0.5);
 }
 
 :root[data-theme="light"] {
-  --board: #eef1ec;
-  --board-line: rgba(70, 90, 80, 0.08);
-  --card-bg: #fdfcf7;
-  --ink: #262420;
-  --muted: #7a7568;
-  --accent: #cc4b3c;
-  --accent-ink: #ffffff;
-  --tape: rgba(230, 196, 84, 0.55);
-  --border: #ddd6c4;
-  --shadow: rgba(30, 40, 35, 0.16);
+  --bg-a: #fdf6e6;
+  --bg-b: #eef0d0;
+  --card-bg: #f6ecd9;
+  --ink: #2b3a2c;
+  --muted: #74805f;
+  --panel-line: rgba(35, 64, 47, 0.12);
+  --shadow: rgba(35, 64, 47, 0.35);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -107,12 +94,11 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "IBM Plex Mono", ui-monospace, "Courier New", monospace;
+  font-family: "Alegreya", serif;
   background:
-    radial-gradient(circle at 18% 22%, var(--board-line) 0, transparent 40%),
-    radial-gradient(circle at 82% 68%, var(--board-line) 0, transparent 45%),
-    radial-gradient(circle at 60% 12%, var(--board-line) 0, transparent 35%),
-    var(--board);
+    radial-gradient(circle at 50% -10%, rgba(232, 163, 61, 0.35), transparent 55%),
+    radial-gradient(circle at 90% 100%, rgba(111, 148, 99, 0.28), transparent 50%),
+    linear-gradient(160deg, var(--bg-a), var(--bg-b));
   color: var(--ink);
   display: flex;
   justify-content: center;
@@ -125,168 +111,212 @@ body {
   max-width: 620px;
 }
 
+.sun {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 0.75rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--gold) 45%, transparent 46%);
+  position: relative;
+}
+
+.sun::before {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(var(--gold) 0deg 6deg, transparent 6deg 24deg);
+  opacity: 0.55;
+  animation: spin 22s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 h1 {
-  font-family: "Caveat", cursive;
+  font-family: "Fredoka", sans-serif;
   font-weight: 700;
-  font-size: 3rem;
-  line-height: 1;
+  font-size: 2rem;
   text-align: center;
-  margin: 0 0 0.35rem;
-  color: var(--accent);
+  margin: 0 0 0.3rem;
+  color: var(--soil);
   text-wrap: balance;
-  transform: rotate(-1.5deg);
+}
+
+@media (prefers-color-scheme: dark) {
+  h1 {
+    color: var(--gold);
+  }
+}
+:root[data-theme="dark"] h1 {
+  color: var(--gold);
+}
+:root[data-theme="light"] h1 {
+  color: var(--soil);
 }
 
 .subtitle {
   text-align: center;
   color: var(--muted);
-  margin: 0 0 2rem;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   letter-spacing: 0.04em;
-  text-transform: uppercase;
+  margin: 0 0 2rem;
 }
 
 .controls {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  margin: 0 auto 1.25rem;
   max-width: 420px;
-  font-size: 0.8rem;
+  margin: 0 auto 1.2rem;
+  font-size: 0.82rem;
 }
 
 .controls label {
   color: var(--muted);
   white-space: nowrap;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-size: 0.72rem;
 }
 
 .controls select {
   flex: 1;
-  padding: 0.55rem 0.7rem;
-  font-family: inherit;
-  font-size: 0.82rem;
-  color: var(--ink);
+  font-family: "Alegreya", serif;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.7rem;
   background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 3px;
+  color: var(--ink);
+  border: 1.5px solid var(--leaf);
+  border-radius: 999px;
   cursor: pointer;
 }
 
 .controls select:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--terracotta);
   outline-offset: 2px;
 }
 
 .card {
   position: relative;
   background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  padding: 2rem 1.85rem 1.85rem 2.35rem;
-  box-shadow: 0 14px 32px -10px var(--shadow);
-  color: var(--ink);
-  transform: rotate(-0.6deg);
-  animation: deal-card 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  border-radius: 28px 28px 20px 20px;
+  padding: 2rem 1.9rem 1.75rem;
+  box-shadow: 0 20px 45px -22px var(--shadow);
+  overflow: hidden;
+  animation: sprout 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) both;
 }
 
 .card::before {
-  /* red margin rule, like a legal pad */
   content: "";
   position: absolute;
   top: 0;
-  bottom: 0;
-  left: 1.55rem;
-  width: 1px;
-  background: var(--accent);
-  opacity: 0.55;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--leaf), var(--gold), var(--terracotta));
 }
 
-.card::after {
-  /* washi tape */
-  content: "";
-  position: absolute;
-  top: -0.7rem;
-  left: 50%;
-  width: 4.5rem;
-  height: 1.4rem;
-  background: var(--tape);
-  transform: translateX(-50%) rotate(-2deg);
-  box-shadow: 0 2px 4px var(--shadow);
-}
-
-@keyframes deal-card {
+@keyframes sprout {
   from {
     opacity: 0;
-    transform: rotate(-0.6deg) translateY(-14px) scale(0.98);
+    transform: translateY(10px) scale(0.97);
   }
   to {
     opacity: 1;
-    transform: rotate(-0.6deg) translateY(0) scale(1);
+    transform: translateY(0) scale(1);
   }
 }
 
 .category {
-  display: inline-block;
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 700;
-  margin-bottom: 0.4rem;
+  color: #fff;
+  background: var(--leaf);
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
 }
 
 .topic-title {
-  font-family: "Caveat", cursive;
-  font-weight: 700;
-  font-size: 2rem;
-  line-height: 1.1;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.25;
   margin: 0 0 1rem;
   color: var(--ink);
   text-wrap: balance;
 }
 
 .cue-card {
-  margin: 0 0 1.6rem 1.15rem;
+  margin: 0 0 1.6rem 1.1rem;
   padding: 0;
   color: var(--muted);
-  font-size: 0.85rem;
-  line-height: 1.9;
+  font-size: 0.9rem;
+  line-height: 1.75;
 }
 
 section h2 {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
   font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 700;
-  color: var(--muted);
-  margin-bottom: 0.6rem;
-  padding-bottom: 0.3rem;
-  border-bottom: 1px dashed var(--border);
+  letter-spacing: 0.05em;
+  color: var(--leaf);
+  margin-bottom: 0.65rem;
 }
 
 .vocab-list {
-  margin: 0 0 1.6rem 1.15rem;
+  list-style: none;
+  margin: 0 0 1.5rem;
   padding: 0;
-  line-height: 1.8;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
+  line-height: 1.85;
 }
 
 .vocab-list li {
+  padding-left: 1.5rem;
+  position: relative;
   opacity: 0;
-  animation: reveal-word 0.4s ease both;
+  animation: reveal-seed 0.4s ease both;
   animation-delay: calc(var(--i, 0) * 90ms);
 }
 
-.vocab-list li strong {
-  background: linear-gradient(transparent 62%, var(--tape) 62%);
-  padding: 0 0.05rem;
+.vocab-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 10px;
+  height: 10px;
+  background: var(--gold);
+  border-radius: 0 60% 0 60%;
+  transform: rotate(45deg);
 }
 
-@keyframes reveal-word {
+.vocab-list li strong {
+  color: var(--soil);
+}
+@media (prefers-color-scheme: dark) {
+  .vocab-list li strong {
+    color: var(--gold);
+  }
+}
+:root[data-theme="dark"] .vocab-list li strong {
+  color: var(--gold);
+}
+:root[data-theme="light"] .vocab-list li strong {
+  color: var(--soil);
+}
+
+@keyframes reveal-seed {
   from {
     opacity: 0;
     transform: translateX(-6px);
@@ -299,74 +329,59 @@ section h2 {
 
 .grammar-box {
   position: relative;
-  background: transparent;
-  border: 1.5px dashed var(--accent);
-  border-radius: 3px;
+  background: repeating-linear-gradient(135deg, var(--panel-line) 0 2px, transparent 2px 14px), transparent;
+  border: 1.5px solid var(--gold);
+  border-radius: 14px;
   padding: 1rem 1.15rem;
-  margin-bottom: 1.75rem;
-  transform: rotate(0.7deg);
+  margin-bottom: 1.6rem;
 }
 
 .grammar-box h3 {
-  margin: 0 0 0.35rem;
-  color: var(--accent);
-  font-size: 0.95rem;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: 700;
-  text-transform: uppercase;
+  font-size: 0.72rem;
   letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 0 0 0.4rem;
 }
 
 .grammar-box p {
-  margin: 0.3rem 0;
+  margin: 0.25rem 0;
   line-height: 1.55;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  color: var(--ink);
 }
 
 .grammar-example {
   font-style: italic;
-  color: var(--muted);
+  color: var(--muted) !important;
 }
 
 button {
   display: block;
   width: 100%;
-  padding: 0.8rem;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  background: transparent;
-  color: var(--ink);
-  border: 1.5px dashed var(--ink);
-  border-radius: 3px;
+  padding: 0.85rem;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: linear-gradient(120deg, var(--leaf), var(--gold));
+  border: none;
+  border-radius: 999px;
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: color 0.25s ease, border-color 0.25s ease;
-  z-index: 0;
-}
-
-button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-  z-index: -1;
+  box-shadow: 0 10px 24px -10px rgba(232, 163, 61, 0.7);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
 button:hover {
-  color: var(--accent-ink);
-  border-color: var(--accent);
-}
-
-button:hover::before {
-  transform: scaleX(1);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -10px rgba(232, 163, 61, 0.85);
+  filter: brightness(1.05);
 }
 
 button:active {
-  transform: translateY(1px);
+  transform: translateY(0);
+  filter: brightness(0.97);
 }

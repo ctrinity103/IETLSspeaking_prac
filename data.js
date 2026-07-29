@@ -1,7 +1,573 @@
-// IELTS Speaking Part 2 practice data: topics (with cue-card points and
-// relevant vocabulary) and advanced grammar structures for storytelling.
+// IELTS Speaking Part 2 practice data.
+//
+// Vocabulary is organised per category (not per individual topic) because a
+// tutor typically wants any of several related word choices to come up for
+// any topic in that category. CATEGORY_VOCAB holds one shared pool per
+// category; TOPICS holds the individual cue-card prompts and points into a
+// category by name.
 
+const CATEGORY_VOCAB = {
+  People: [
+    { word: "approachable", meaning: "friendly and easy to talk to" },
+    { word: "down-to-earth", meaning: "practical, sensible, and modest" },
+    { word: "easy-going", meaning: "relaxed and not easily annoyed" },
+    { word: "opinionated", meaning: "having strong views and expressing them often" },
+    { word: "resourceful", meaning: "good at finding quick, clever solutions" },
+    { word: "considerate", meaning: "thoughtful about other people's feelings" },
+    { word: "eloquent", meaning: "fluent and persuasive in speech" },
+    { word: "unassuming", meaning: "modest, not seeking attention" },
+    { word: "a kindred spirit", meaning: "someone who shares your outlook or values" },
+    { word: "someone I look up to", meaning: "a person you admire and respect" },
+    { word: "well put-together", meaning: "always looks neat and stylish" },
+    { word: "charismatic", meaning: "having a compelling charm that draws people in" },
+    { word: "young", meaning: "not old" },
+    { word: "retired", meaning: "no longer working, usually after a career" },
+    { word: "middle-aged", meaning: "roughly between 45 and 65 years old" },
+    { word: "slender", meaning: "thin in an elegant way" },
+    { word: "stocky", meaning: "solidly built and broad" },
+    { word: "chubby", meaning: "slightly plump, in a pleasant way" },
+    { word: "jacked", meaning: "very muscular (informal)" },
+    { word: "slim", meaning: "thin in a healthy way" },
+    { word: "lanky", meaning: "tall and thin, often a little awkward" },
+    { word: "muscular", meaning: "having well-developed muscles" },
+    { word: "curly", meaning: "(of hair) full of curls" },
+    { word: "wavy", meaning: "(of hair) gently curved" },
+    { word: "dyed", meaning: "(of hair) coloured artificially" },
+    { word: "straight", meaning: "(of hair) without curls" },
+    { word: "stunning", meaning: "extremely attractive" },
+    { word: "cute", meaning: "attractive in an endearing way" },
+    { word: "gorgeous", meaning: "extremely beautiful" },
+    { word: "elegant", meaning: "graceful and stylish" },
+    { word: "dashing", meaning: "attractive and confident, often said of men" },
+    { word: "handsome", meaning: "attractive, especially of a man" },
+    { word: "good-looking", meaning: "physically attractive" },
+    { word: "attractive", meaning: "pleasing in appearance" },
+    { word: "sophisticated", meaning: "cultured and refined" },
+    { word: "hot", meaning: "very attractive (informal)" },
+    { word: "stylish", meaning: "fashionable and elegant" },
+    { word: "fashionable", meaning: "following current trends in style" },
+    { word: "smart", meaning: "well-dressed and neat, or intelligent" },
+    { word: "a people person", meaning: "someone who enjoys and is good with others" },
+    { word: "quick-witted", meaning: "able to think and respond fast" },
+    { word: "thick-skinned", meaning: "not easily upset by criticism" },
+    { word: "a good listener", meaning: "someone who pays close attention when others speak" },
+    { word: "wears their heart on their sleeve", meaning: "openly shows their emotions" },
+    { word: "level-headed", meaning: "calm and sensible, especially under pressure" },
+    { word: "a mentor figure", meaning: "someone who guides and advises you" },
+    { word: "sociable by nature", meaning: "naturally enjoys spending time with others" },
+    { word: "has a way with words", meaning: "is naturally good at expressing things" },
+    { word: "grounded", meaning: "sensible and realistic despite success" },
+    { word: "a hard act to follow", meaning: "so impressive that others struggle to match them" },
+    { word: "admire", meaning: "to respect and think highly of someone" },
+    { word: "inspire", meaning: "to make someone want to achieve something" },
+    { word: "spend time", meaning: "to pass time doing something, often with someone" },
+    { word: "rude", meaning: "not polite; showing bad manners" },
+    { word: "positive", meaning: "hopeful and optimistic" },
+    { word: "glad", meaning: "pleased and happy" },
+    { word: "successful", meaning: "achieving the results you want" },
+    { word: "career", meaning: "a person's long-term work or profession" },
+    { word: "soft", meaning: "gentle and kind in manner" },
+    { word: "role model", meaning: "a person you admire and try to be like" },
+    { word: "perseverance", meaning: "continued effort despite difficulty" },
+    { word: "self-made", meaning: "successful through one's own effort, not inherited advantage" },
+    { word: "resilient", meaning: "able to recover quickly from difficulties" },
+    { word: "words of wisdom", meaning: "advice that shows good judgement" },
+    { word: "trailblazer", meaning: "a person who is the first to do something new" },
+    { word: "close-knit family", meaning: "a family with strong, caring relationships" },
+    { word: "breadwinner", meaning: "the main income earner in a family" },
+    { word: "supportive", meaning: "providing encouragement and help" },
+    { word: "hardworking", meaning: "putting in a lot of effort and energy" },
+    { word: "sacrifice", meaning: "giving something up for someone else's benefit" },
+    { word: "nurturing", meaning: "caring for and encouraging the growth of someone" },
+    { word: "wholeheartedly", meaning: "completely and sincerely" },
+    { word: "unconditional love", meaning: "love with no limits or conditions" },
+    { word: "childhood friend", meaning: "a friend you have known since you were young" },
+    { word: "to hit it off", meaning: "to immediately like and get along with someone" },
+    { word: "inseparable", meaning: "always together, very close" },
+    { word: "trustworthy", meaning: "able to be relied on as honest" },
+    { word: "to keep in touch", meaning: "to maintain contact with someone" },
+    { word: "shared interests", meaning: "hobbies or topics both people enjoy" },
+    { word: "loyal", meaning: "faithful and supportive" },
+    { word: "reminisce", meaning: "to talk about pleasant memories from the past" },
+    { word: "strict but fair", meaning: "demanding high standards while treating people justly" },
+    { word: "to instil values", meaning: "to gradually establish an idea or attitude in someone" },
+    { word: "thought-provoking", meaning: "stimulating careful thought" },
+    { word: "dedicated", meaning: "committed to a task or purpose" },
+    { word: "to broaden one's horizons", meaning: "to expand one's knowledge or experience" },
+    { word: "encouraging", meaning: "giving support and confidence" },
+  ],
+
+  Places: [
+    { word: "picturesque", meaning: "visually attractive, like a picture" },
+    { word: "off the beaten track", meaning: "not well-known or often visited" },
+    { word: "bustling", meaning: "full of busy activity" },
+    { word: "a stone's throw from", meaning: "very close to" },
+    { word: "secluded", meaning: "quiet and private, hidden away" },
+    { word: "laid-back atmosphere", meaning: "a relaxed, easy-going mood" },
+    { word: "urban sprawl", meaning: "the uncontrolled expansion of a city" },
+    { word: "a melting pot of cultures", meaning: "a place where different cultures mix" },
+    { word: "unspoiled", meaning: "not damaged or changed by development" },
+    { word: "steeped in history", meaning: "full of historical significance" },
+    { word: "cosmopolitan", meaning: "full of people and influences from many countries" },
+    { word: "tucked away", meaning: "hidden in a quiet, hard-to-find spot" },
+    { word: "cosy", meaning: "warm, comfortable, and inviting" },
+    { word: "spacious", meaning: "having plenty of room" },
+    { word: "damp", meaning: "slightly wet, often unpleasantly" },
+    { word: "cramped", meaning: "uncomfortably small and crowded" },
+    { word: "tidy", meaning: "neat and well-organised" },
+    { word: "bright", meaning: "full of light" },
+    { word: "dark", meaning: "lacking light" },
+    { word: "airy", meaning: "having plenty of fresh air and light" },
+    { word: "stuffy", meaning: "lacking fresh air; poorly ventilated" },
+    { word: "contemporary", meaning: "modern, of the present time" },
+    { word: "old-fashioned", meaning: "outdated in style" },
+    { word: "traditional", meaning: "following long-established customs" },
+    { word: "a hidden gem", meaning: "a wonderful place that is not well known" },
+    { word: "thriving community", meaning: "a lively, successful group of local residents" },
+    { word: "run-down", meaning: "in poor condition through neglect" },
+    { word: "gentrified", meaning: "renovated so it now attracts wealthier residents" },
+    { word: "sprawling", meaning: "spread out over a large area" },
+    { word: "in the heart of the city", meaning: "right in the city centre" },
+    { word: "on the outskirts", meaning: "on the edge of a town or city" },
+    { word: "a far cry from downtown", meaning: "very different from the city centre" },
+    { word: "teeming with life", meaning: "full of activity and living things" },
+    { word: "sleepy town", meaning: "a quiet town with little activity" },
+    { word: "up-and-coming area", meaning: "a district that is developing and becoming popular" },
+    { word: "affordable", meaning: "reasonably priced" },
+    { word: "charming", meaning: "pleasant and attractive" },
+    { word: "artificial", meaning: "man-made rather than natural" },
+    { word: "touristy", meaning: "full of tourists and aimed at them" },
+    { word: "quiet", meaning: "calm, with little noise" },
+    { word: "peaceful", meaning: "calm and free from disturbance" },
+    { word: "urban", meaning: "relating to a town or city" },
+    { word: "polluted", meaning: "contaminated, especially with waste or chemicals" },
+    { word: "dull", meaning: "lacking interest or excitement" },
+    { word: "remarkable / unremarkable", meaning: "very impressive / not particularly special" },
+    { word: "deserted", meaning: "empty of people" },
+    { word: "remote", meaning: "far away from other places" },
+    { word: "isolated", meaning: "separate and distant from other places" },
+    { word: "compact", meaning: "small and efficiently arranged" },
+    { word: "enormous", meaning: "extremely large" },
+    { word: "massive", meaning: "very large in size" },
+    { word: "marvellous", meaning: "wonderful; excellent" },
+    { word: "fantastic", meaning: "extremely good" },
+    { word: "terrible", meaning: "very bad" },
+    { word: "pleasant / unpleasant", meaning: "enjoyable / not enjoyable" },
+    { word: "horrendous", meaning: "extremely unpleasant or shocking" },
+    { word: "decorate / decoration", meaning: "to make something look attractive / an ornament" },
+    { word: "similar", meaning: "alike in some way" },
+    { word: "range", meaning: "a variety of things of the same type" },
+    { word: "dangerous", meaning: "likely to cause harm" },
+    { word: "location", meaning: "the place where something is" },
+    { word: "rush hour", meaning: "the busiest time for traffic" },
+    { word: "traffic", meaning: "vehicles moving on a road" },
+    { word: "due to", meaning: "because of" },
+    { word: "as a result of", meaning: "because of, as a consequence of" },
+    { word: "lead to", meaning: "to result in" },
+    { word: "compared with", meaning: "when set alongside something else" },
+    { word: "different from", meaning: "not the same as" },
+    { word: "the same as", meaning: "identical or equal to" },
+    { word: "landmark", meaning: "a well-known building or feature that identifies a place" },
+    { word: "tranquil", meaning: "calm and peaceful" },
+    { word: "sanctuary", meaning: "a place of safety or peace" },
+    { word: "to unwind", meaning: "to relax after stress or tension" },
+    { word: "recharge one's batteries", meaning: "to rest and regain energy" },
+    { word: "serenity", meaning: "the state of being calm and peaceful" },
+    { word: "escape the hustle and bustle", meaning: "to get away from busy, noisy life" },
+    { word: "idyllic", meaning: "extremely peaceful and picturesque" },
+    { word: "cultural heritage", meaning: "traditions and customs passed down over generations" },
+    { word: "cuisine", meaning: "a style of cooking associated with a place" },
+    { word: "exotic", meaning: "unusual and exciting because from a distant place" },
+    { word: "to broaden one's perspective", meaning: "to gain a wider view of the world" },
+    { word: "language barrier", meaning: "difficulty communicating due to different languages" },
+    { word: "culture shock", meaning: "disorientation from encountering an unfamiliar culture" },
+    { word: "itinerary", meaning: "a planned route or schedule for a trip" },
+  ],
+
+  Objects: [
+    { word: "indispensable", meaning: "absolutely necessary" },
+    { word: "a family heirloom", meaning: "a valuable object passed down through generations" },
+    { word: "well-crafted", meaning: "made with skill and care" },
+    { word: "worn but sturdy", meaning: "used a lot but still strong" },
+    { word: "sentimental value", meaning: "value based on emotional association, not price" },
+    { word: "a lifesaver", meaning: "something extremely helpful in a difficult situation" },
+    { word: "practical rather than decorative", meaning: "useful rather than just for looks" },
+    { word: "showing signs of wear", meaning: "starting to look used or damaged" },
+    { word: "a bargain", meaning: "something bought cheaply for its value" },
+    { word: "built to last", meaning: "made to remain useful for a long time" },
+    { word: "a testament to good craftsmanship", meaning: "clear proof of skilled work" },
+    { word: "holds sentimental value", meaning: "is emotionally important, regardless of price" },
+    { word: "showing its age", meaning: "starting to look old" },
+    { word: "second-hand but reliable", meaning: "previously owned but still dependable" },
+    { word: "a splurge", meaning: "an indulgent, often expensive purchase" },
+    { word: "a steal", meaning: "an item bought for much less than it's worth" },
+    { word: "multi-purpose", meaning: "able to be used in several different ways" },
+    { word: "gathering dust", meaning: "unused for a long time" },
+    { word: "replaced out of necessity", meaning: "replaced because it had to be, not by choice" },
+    { word: "typical", meaning: "having the usual features of its kind" },
+    { word: "natural feature", meaning: "a feature formed by nature, not people" },
+    { word: "wild", meaning: "not tamed or cultivated" },
+    { word: "website", meaning: "a set of pages on the internet" },
+    { word: "well-known", meaning: "famous or widely recognised" },
+    { word: "to panic", meaning: "to feel sudden, uncontrollable fear" },
+    { word: "perspective", meaning: "a particular way of viewing something" },
+    { word: "vivid", meaning: "producing strong, clear images in the mind" },
+    { word: "location", meaning: "the place where something is" },
+    { word: "neighbourhood / neighbour", meaning: "the area around your home / a person living nearby" },
+    { word: "rustic", meaning: "simple and rural in style" },
+    { word: "homely", meaning: "comfortable and cosy, like home" },
+    { word: "inexpensive", meaning: "not costing much money" },
+    { word: "celebrate", meaning: "to mark an occasion with enjoyment" },
+    { word: "advertisement", meaning: "a public promotion of a product or service" },
+    { word: "ceremony", meaning: "a formal event held for a special occasion" },
+    { word: "to witness", meaning: "to see something happen" },
+    { word: "a waste of time", meaning: "something not worth the time spent on it" },
+    { word: "to make a big impression", meaning: "to be remembered strongly by someone" },
+    { word: "the most striking thing", meaning: "the most noticeable or memorable feature" },
+    { word: "eye-catching", meaning: "attracting attention immediately" },
+    { word: "impressed", meaning: "feeling admiration for something" },
+    { word: "account", meaning: "a registered profile on a website or service" },
+    { word: "to subscribe", meaning: "to sign up to receive something regularly" },
+    { word: "browser", meaning: "software used to access the internet" },
+    { word: "news", meaning: "information about recent events" },
+    { word: "chat show", meaning: "a television programme with guest interviews" },
+    { word: "due to", meaning: "because of" },
+    { word: "as a result of", meaning: "because of, as a consequence of" },
+    { word: "lead to", meaning: "to result in" },
+    { word: "compared with", meaning: "when set alongside something else" },
+    { word: "different from", meaning: "not the same as" },
+    { word: "the same as", meaning: "identical or equal to" },
+    { word: "thoughtful", meaning: "showing careful consideration for others" },
+    { word: "to treasure something", meaning: "to value something highly" },
+    { word: "unwrap", meaning: "to remove the wrapping from a gift" },
+    { word: "token of appreciation", meaning: "a gift given to show gratitude" },
+    { word: "cherished", meaning: "deeply and fondly valued" },
+    { word: "keepsake", meaning: "a small item kept in memory of someone or something" },
+    { word: "versatile", meaning: "able to be used in many different ways" },
+    { word: "understated", meaning: "simple and elegant, not showy" },
+    { word: "hand-me-down", meaning: "a used item passed from one person to another" },
+    { word: "tailored", meaning: "made to fit closely to someone's body" },
+    { word: "on-trend", meaning: "fashionable at the moment" },
+    { word: "comfort zone", meaning: "the familiar style one feels comfortable wearing" },
+    { word: "statement piece", meaning: "an item that stands out and expresses personality" },
+    { word: "well-worn", meaning: "showing signs of frequent use" },
+  ],
+
+  Events: [
+    { word: "a spur-of-the-moment decision", meaning: "an unplanned, spontaneous decision" },
+    { word: "meticulously planned", meaning: "planned with great care and attention to detail" },
+    { word: "a bittersweet occasion", meaning: "an event that brings both happiness and sadness" },
+    { word: "brought the family together", meaning: "caused family members to gather and connect" },
+    { word: "exceeded expectations", meaning: "turned out even better than hoped" },
+    { word: "a modest gathering", meaning: "a small, unpretentious social event" },
+    { word: "all the trimmings", meaning: "all the extra things that go with something" },
+    { word: "a night to remember", meaning: "an especially memorable evening" },
+    { word: "a milestone", meaning: "a significant point of progress" },
+    { word: "a turning point", meaning: "a moment when something begins to change significantly" },
+    { word: "a low-key celebration", meaning: "a simple, understated celebration" },
+    { word: "an elaborate affair", meaning: "an event planned in great, often lavish, detail" },
+    { word: "memorable for all the right reasons", meaning: "remembered fondly and positively" },
+    { word: "a joyous occasion", meaning: "a happy, celebratory event" },
+    { word: "worth commemorating", meaning: "important enough to be marked or remembered" },
+    { word: "went off without a hitch", meaning: "happened smoothly, with no problems" },
+    { word: "festive atmosphere", meaning: "a joyful, celebratory mood" },
+    { word: "get-together", meaning: "an informal social gathering" },
+    { word: "to let one's hair down", meaning: "to relax and enjoy oneself freely" },
+    { word: "extravagant", meaning: "elaborate and expensive" },
+    { word: "to reminisce", meaning: "to talk fondly about the past" },
+    { word: "unforgettable", meaning: "so remarkable it cannot be forgotten" },
+    { word: "gathering", meaning: "a meeting of people for a shared purpose" },
+  ],
+
+  Experiences: [
+    { word: "an eye-opening experience", meaning: "an experience that reveals surprising new information" },
+    { word: "humbling", meaning: "making you feel less proud or important, in a positive way" },
+    { word: "a steep learning curve", meaning: "something difficult to learn quickly" },
+    { word: "character-building", meaning: "helping to develop personal strength or resilience" },
+    { word: "left a lasting impression", meaning: "was remembered strongly afterwards" },
+    { word: "a wake-up call", meaning: "an event that makes you realise something important" },
+    { word: "gave me a new perspective", meaning: "changed the way I see things" },
+    { word: "brought us closer together", meaning: "strengthened a relationship" },
+    { word: "threw me out of my comfort zone", meaning: "forced me into an unfamiliar situation" },
+    { word: "a baptism by fire", meaning: "a difficult introduction to something new" },
+    { word: "broadened my horizons", meaning: "expanded my knowledge or experience" },
+    { word: "a sobering experience", meaning: "an experience that makes you think seriously" },
+    { word: "tested my patience", meaning: "was frustrating and required self-control" },
+    { word: "a defining moment", meaning: "a moment that shapes who you become" },
+    { word: "taught me resilience", meaning: "helped me learn to recover from difficulty" },
+    { word: "an unexpected silver lining", meaning: "an unforeseen positive side to a bad situation" },
+    { word: "unusual", meaning: "not common or ordinary" },
+    { word: "get together", meaning: "to meet socially" },
+    { word: "dress up", meaning: "to wear special or formal clothes" },
+    { word: "to make a contribution to society", meaning: "to help improve the community or world" },
+    { word: "to be on the fence", meaning: "to be undecided about something" },
+    { word: "give somebody a head start", meaning: "to give an early advantage" },
+    { word: "there's no point doing something", meaning: "it wouldn't be worthwhile" },
+    { word: "put someone's life on the line", meaning: "to risk one's life" },
+    { word: "off the top of my head", meaning: "without stopping to think carefully" },
+    { word: "hands-on experience", meaning: "practical, direct experience" },
+    { word: "trial and error", meaning: "learning by testing and correcting mistakes" },
+    { word: "to master a skill", meaning: "to become highly proficient at something" },
+    { word: "proficient", meaning: "highly skilled or competent" },
+    { word: "to pick something up", meaning: "to learn something informally" },
+    { word: "persistence", meaning: "continued effort despite difficulty" },
+    { word: "self-taught", meaning: "having learned something without formal instruction" },
+    { word: "to weigh up the pros and cons", meaning: "to carefully consider advantages and disadvantages" },
+    { word: "dilemma", meaning: "a difficult choice between two options" },
+    { word: "to be torn between", meaning: "to be unable to choose between two options" },
+    { word: "gut feeling", meaning: "an instinct rather than logical reasoning" },
+    { word: "to take the plunge", meaning: "to decide to do something risky" },
+    { word: "second thoughts", meaning: "doubts about a decision already made" },
+    { word: "life-changing", meaning: "having a significant impact on someone's life" },
+    { word: "no regrets", meaning: "not feeling sorry about a past choice" },
+    { word: "overjoyed", meaning: "extremely happy" },
+    { word: "on cloud nine", meaning: "extremely happy, elated" },
+    { word: "elated", meaning: "very happy and excited" },
+    { word: "to beam with joy", meaning: "to smile radiantly, showing happiness" },
+    { word: "euphoric", meaning: "feeling intense excitement and happiness" },
+    { word: "heart-warming", meaning: "causing feelings of happiness and love" },
+    { word: "jump for joy", meaning: "to be extremely pleased" },
+    { word: "content", meaning: "in a state of peaceful happiness" },
+    { word: "to break the news", meaning: "to tell someone important information" },
+    { word: "overwhelmed with joy", meaning: "having very strong feelings of happiness" },
+    { word: "long-awaited", meaning: "waited for over a long time" },
+    { word: "to sink in", meaning: "to be fully realised or understood gradually" },
+    { word: "ecstatic", meaning: "extremely happy and excited" },
+    { word: "a weight off one's shoulders", meaning: "a relief from worry or burden" },
+    { word: "unexpected", meaning: "not anticipated" },
+    { word: "celebrate in style", meaning: "to celebrate in a memorable, lavish way" },
+    { word: "to lend a hand", meaning: "to help someone" },
+    { word: "compassionate", meaning: "feeling and showing concern for others" },
+    { word: "to go out of one's way", meaning: "to make a special effort to do something" },
+    { word: "selfless", meaning: "putting others' needs before one's own" },
+    { word: "gratifying", meaning: "giving satisfaction or pleasure" },
+    { word: "in need", meaning: "lacking basic necessities or requiring help" },
+    { word: "to make a difference", meaning: "to have a significant positive effect" },
+    { word: "empathy", meaning: "the ability to understand another's feelings" },
+  ],
+
+  "Media & communication": [
+    { word: "thought-provoking", meaning: "causing serious thought" },
+    { word: "binge-worthy", meaning: "good enough to watch many episodes in a row" },
+    { word: "catchy", meaning: "easy to remember and enjoyable" },
+    { word: "resonated with me", meaning: "connected with me on an emotional level" },
+    { word: "went viral", meaning: "spread very quickly online" },
+    { word: "struck a chord", meaning: "evoked a strong emotional response" },
+    { word: "informative rather than sensational", meaning: "factual rather than exaggerated for effect" },
+    { word: "a guilty pleasure", meaning: "something enjoyed despite feeling it shouldn't be" },
+    { word: "well-produced", meaning: "made with high technical quality" },
+    { word: "a cult following", meaning: "a small but very devoted group of fans" },
+    { word: "formulaic", meaning: "following a predictable, unoriginal pattern" },
+    { word: "a slow burn", meaning: "develops gradually rather than quickly" },
+    { word: "well-received", meaning: "responded to positively by audiences or critics" },
+    { word: "panned by critics", meaning: "strongly criticised by reviewers" },
+    { word: "relatable content", meaning: "content that reflects the audience's own experiences" },
+    { word: "algorithm-driven", meaning: "recommended or shaped by computer algorithms" },
+    { word: "a niche audience", meaning: "a small, specific group of interested viewers" },
+    { word: "binge-watched it in one sitting", meaning: "watched all of it in one go" },
+    { word: "gripping", meaning: "extremely exciting or engaging" },
+    { word: "plot twist", meaning: "an unexpected turn in the storyline" },
+    { word: "cinematography", meaning: "the art of film photography" },
+    { word: "box-office hit", meaning: "a commercially very successful film" },
+    { word: "compelling", meaning: "evoking strong interest or attention" },
+    { word: "storyline", meaning: "the plot of a film or book" },
+    { word: "to leave a lasting impression", meaning: "to be remembered for a long time" },
+    { word: "uplifting", meaning: "making one feel happier or more hopeful" },
+    { word: "catchy tune", meaning: "a melody that is easy to remember" },
+    { word: "soothing", meaning: "having a calming effect" },
+    { word: "nostalgic", meaning: "evoking sentimental memories of the past" },
+    { word: "on repeat", meaning: "listened to again and again" },
+    { word: "lyrics", meaning: "the words of a song" },
+    { word: "mood-lifting", meaning: "improving one's emotional state" },
+    { word: "page-turner", meaning: "a book that is exciting and hard to put down" },
+    { word: "protagonist", meaning: "the main character in a story" },
+    { word: "to broaden one's outlook", meaning: "to expand one's way of thinking" },
+    { word: "profound", meaning: "having deep meaning or effect" },
+  ],
+
+  "Skills & learning": [
+    { word: "picked it up quickly", meaning: "learned it fast" },
+    { word: "a fast learner", meaning: "someone who learns quickly" },
+    { word: "hands-on experience", meaning: "practical, direct experience" },
+    { word: "trial and error", meaning: "learning by testing and correcting mistakes" },
+    { word: "self-taught", meaning: "having learned something without formal instruction" },
+    { word: "mastered the basics", meaning: "became competent at the fundamentals" },
+    { word: "still a work in progress", meaning: "not yet finished or perfected" },
+    { word: "practice makes perfect", meaning: "repeated practice leads to improvement" },
+    { word: "muscle memory", meaning: "automatic physical movement learned through repetition" },
+    { word: "learning curve flattened out", meaning: "became easier after an initial difficult stage" },
+    { word: "second nature by now", meaning: "so familiar it feels automatic" },
+    { word: "a natural aptitude", meaning: "a built-in talent for something" },
+    { word: "rusty", meaning: "out of practice" },
+    { word: "picked up the basics in no time", meaning: "learned the fundamentals very quickly" },
+    { word: "honed my skills", meaning: "refined and improved my abilities" },
+    { word: "learned the hard way", meaning: "learned through difficult or painful experience" },
+    { word: "transferable skills", meaning: "skills useful across different jobs or situations" },
+  ],
+
+  "Decisions & achievements": [
+    { word: "a calculated risk", meaning: "a risk taken after careful thought" },
+    { word: "weighed the pros and cons", meaning: "carefully considered advantages and disadvantages" },
+    { word: "a leap of faith", meaning: "a risky decision made without certainty of success" },
+    { word: "paid off in the end", meaning: "was worthwhile eventually" },
+    { word: "a hard-won achievement", meaning: "an achievement gained through great effort" },
+    { word: "second-guessed myself", meaning: "doubted a decision I had already made" },
+    { word: "no regrets", meaning: "not feeling sorry about a past choice" },
+    { word: "a proud moment", meaning: "a moment of feeling proud" },
+    { word: "bit the bullet", meaning: "made a difficult decision and accepted the consequences" },
+    { word: "a fork in the road", meaning: "a point where a difficult choice must be made" },
+    { word: "hedge my bets", meaning: "reduced risk by not committing fully to one option" },
+    { word: "against my better judgment", meaning: "despite believing it was not the wisest choice" },
+    { word: "vindicated", meaning: "proved to have been right after doubt or criticism" },
+    { word: "a hard-earned reward", meaning: "a reward gained through significant effort" },
+    { word: "sink or swim", meaning: "succeed through your own effort or fail completely" },
+    { word: "no turning back", meaning: "committed, with no way to reverse the decision" },
+    { word: "to overcome obstacles", meaning: "to successfully deal with difficulties" },
+    { word: "sense of accomplishment", meaning: "a feeling of satisfaction from achieving something" },
+    { word: "determination", meaning: "firmness of purpose" },
+    { word: "against all odds", meaning: "despite great difficulty" },
+    { word: "breakthrough", meaning: "an important discovery or achievement" },
+  ],
+
+  "Food & experiences": [
+    { word: "an acquired taste", meaning: "something you only learn to enjoy over time" },
+    { word: "mouth-watering", meaning: "looking or smelling delicious" },
+    { word: "a hidden gem", meaning: "a wonderful restaurant that isn't well known" },
+    { word: "authentic", meaning: "genuine and true to its origin" },
+    { word: "home-cooked", meaning: "prepared at home rather than bought" },
+    { word: "a far cry from fast food", meaning: "very different from quick, low-quality food" },
+    { word: "comfort food", meaning: "food that gives emotional comfort, often from childhood" },
+    { word: "generous portions", meaning: "large amounts of food served" },
+    { word: "a feast for the senses", meaning: "enjoyable to see, smell, and taste" },
+    { word: "an unpretentious little place", meaning: "a modest, unassuming venue" },
+    { word: "packed to the rafters", meaning: "completely full of people" },
+    { word: "a well-kept secret", meaning: "a great place not many people know about" },
+    { word: "overpriced for what it is", meaning: "too expensive for its actual quality" },
+    { word: "a taste of home", meaning: "food that reminds you of home" },
+    { word: "locally sourced", meaning: "grown or produced nearby" },
+    { word: "rich in flavour", meaning: "having a strong, satisfying taste" },
+    { word: "a far cry from what I expected", meaning: "very different from what I anticipated" },
+    { word: "junk food", meaning: "food that is quick and tasty but not nutritious" },
+    { word: "guidelines", meaning: "recommended rules or advice" },
+    { word: "convenient", meaning: "easy to use or access" },
+    { word: "nutritious", meaning: "containing substances the body needs to be healthy" },
+    { word: "to invest", meaning: "to put in time, money, or effort for future benefit" },
+    { word: "frankly", meaning: "speaking honestly and directly" },
+    { word: "time-consuming", meaning: "taking a lot of time" },
+    { word: "addictive", meaning: "extremely engaging, hard to stop doing" },
+    { word: "to ignore", meaning: "to pay no attention to something" },
+  ],
+
+  "Time & routine": [
+    { word: "a hectic schedule", meaning: "a very busy timetable" },
+    { word: "burnt out", meaning: "exhausted from prolonged stress or overwork" },
+    { word: "in the thick of it", meaning: "fully involved in a busy or difficult situation" },
+    { word: "a much-needed break", meaning: "a rest that was really necessary" },
+    { word: "running on autopilot", meaning: "doing things automatically, without much thought" },
+    { word: "work-life balance", meaning: "a healthy balance between job and personal life" },
+    { word: "a fresh start", meaning: "a new beginning" },
+    { word: "procrastinate", meaning: "to delay doing something that should be done" },
+    { word: "streamlined my routine", meaning: "made my daily routine more efficient" },
+    { word: "stretched thin", meaning: "having too many demands on your time or energy" },
+    { word: "a juggling act", meaning: "managing several tasks at once" },
+    { word: "on the back burner", meaning: "postponed and given low priority" },
+    { word: "running on fumes", meaning: "continuing despite being almost out of energy" },
+    { word: "a breath of fresh air", meaning: "a refreshing change from routine" },
+    { word: "fell into a rhythm", meaning: "settled into a steady, comfortable routine" },
+    { word: "time flew by", meaning: "time passed very quickly" },
+    { word: "a much-needed reset", meaning: "a chance to start over and recover" },
+    { word: "to let your hair down", meaning: "to relax and enjoy yourself freely" },
+    { word: "to take a nap", meaning: "to sleep for a short period during the day" },
+  ],
+
+  "Travel & discovery": [
+    { word: "off the grid", meaning: "remote, without normal services" },
+    { word: "a whirlwind trip", meaning: "a very fast-paced, busy trip" },
+    { word: "culture shock", meaning: "disorientation from encountering an unfamiliar culture" },
+    { word: "breathtaking scenery", meaning: "extremely beautiful natural views" },
+    { word: "a bucket-list destination", meaning: "a place you want to visit before you die" },
+    { word: "wanderlust", meaning: "a strong desire to travel" },
+    { word: "immersed myself in the local culture", meaning: "fully engaged with the local way of life" },
+    { word: "a home away from home", meaning: "a place that feels as comfortable as home" },
+    { word: "went off-script", meaning: "did something different from the original plan" },
+    { word: "a shoestring budget", meaning: "a very small amount of money" },
+    { word: "immersive experience", meaning: "an experience that fully engages your attention" },
+    { word: "jet-lagged", meaning: "feeling tired from crossing time zones" },
+    { word: "a whistle-stop tour", meaning: "a very quick visit to several places" },
+    { word: "went against the guidebook", meaning: "did something not recommended by travel guides" },
+    { word: "a local's perspective", meaning: "the viewpoint of someone who lives there" },
+    { word: "worth the detour", meaning: "worth going out of your way for" },
+    { word: "vibrant culture", meaning: "a lively and colourful way of life" },
+    { word: "must-see attraction", meaning: "something visitors should not miss" },
+  ],
+
+  "Nature & geography": [
+    { word: "untouched wilderness", meaning: "natural land unaffected by human activity" },
+    { word: "breathtaking", meaning: "astonishingly beautiful" },
+    { word: "teeming with wildlife", meaning: "full of animals and living things" },
+    { word: "a natural wonder", meaning: "an amazing natural feature or place" },
+    { word: "awe-inspiring", meaning: "causing wonder and admiration" },
+    { word: "ecologically significant", meaning: "important for the natural environment" },
+    { word: "a far-reaching river system", meaning: "a river network that extends over a large area" },
+    { word: "biodiversity hotspot", meaning: "an area rich in many different species" },
+    { word: "untamed landscape", meaning: "wild, natural scenery unaffected by people" },
+    { word: "a far-flung region", meaning: "a distant, remote area" },
+    { word: "at the mercy of the weather", meaning: "completely affected by whatever the weather does" },
+    { word: "a delicate ecosystem", meaning: "a natural system that is easily disturbed" },
+    { word: "sparse vegetation", meaning: "few plants growing in an area" },
+    { word: "a lifeline for local wildlife", meaning: "essential for the survival of local animals" },
+    { word: "seasonal extremes", meaning: "very intense weather that changes sharply between seasons" },
+    { word: "a natural barrier", meaning: "a natural feature that blocks or separates something" },
+  ],
+
+  Technology: [
+    { word: "made redundant by newer tech", meaning: "made unnecessary by newer technology" },
+    { word: "a steep price to pay", meaning: "a significant negative cost or trade-off" },
+    { word: "tech-savvy", meaning: "skilled and comfortable with technology" },
+    { word: "a necessary evil", meaning: "something unpleasant but required" },
+    { word: "streamlined workflows", meaning: "processes made simpler and more efficient" },
+    { word: "on the cutting edge", meaning: "using the most modern methods or technology" },
+    { word: "prone to glitches", meaning: "likely to have small technical problems" },
+    { word: "an over-reliance on", meaning: "depending on something too much" },
+    { word: "a game-changer", meaning: "something that changes a situation significantly" },
+    { word: "streamlined", meaning: "made simpler and more efficient" },
+    { word: "user-friendly", meaning: "easy to use" },
+    { word: "a double-edged sword", meaning: "something with both good and bad effects" },
+    { word: "indispensable in daily life", meaning: "absolutely necessary for everyday life" },
+    { word: "cutting-edge", meaning: "most modern and advanced" },
+    { word: "revolutionized the way we live", meaning: "completely changed how we do something" },
+    { word: "glued to my phone", meaning: "unable to stop looking at your phone" },
+    { word: "to rely on", meaning: "to depend on something" },
+    { word: "glitch", meaning: "a small technical problem" },
+    { word: "multitask", meaning: "to do several things at the same time" },
+    { word: "labour-saving", meaning: "reducing the amount of work needed" },
+  ],
+
+  "Hobbies & Interests": [
+    { word: "pastime", meaning: "an activity done regularly for enjoyment" },
+    { word: "to unwind", meaning: "to relax" },
+    { word: "immersive", meaning: "deeply engaging, absorbing full attention" },
+    { word: "therapeutic", meaning: "having a calming, healing effect" },
+    { word: "enthusiast", meaning: "a person who is very interested in something" },
+    { word: "to hone a skill", meaning: "to refine and improve a skill" },
+    { word: "addictive", meaning: "extremely engaging, hard to stop doing" },
+    { word: "an outlet", meaning: "a way to express or release something, like creativity or stress" },
+    { word: "adrenaline rush", meaning: "a sudden feeling of excitement and energy" },
+    { word: "team spirit", meaning: "a feeling of unity among team members" },
+    { word: "to root for a team", meaning: "to support a team enthusiastically" },
+    { word: "nail-biting finish", meaning: "an extremely tense and exciting ending" },
+    { word: "underdog", meaning: "a competitor expected to lose" },
+    { word: "stamina", meaning: "the ability to sustain prolonged physical effort" },
+    { word: "sportsmanship", meaning: "fair and generous behaviour in sport" },
+    { word: "to keep fit", meaning: "to maintain physical health through exercise" },
+  ],
+};
+
+// Individual cue-card topics. Each points at a category name in
+// CATEGORY_VOCAB, which supplies the pool that random vocabulary is drawn
+// from for that topic.
 const TOPICS = [
+  // People
   {
     category: "People",
     title: "Describe a person who inspires you",
@@ -9,18 +575,8 @@ const TOPICS = [
       "who this person is",
       "how you know them",
       "what they have done",
-      "and explain why this person inspires you"
+      "and explain why this person inspires you",
     ],
-    vocabulary: [
-      { word: "role model", meaning: "a person you admire and try to be like" },
-      { word: "down-to-earth", meaning: "practical, sensible, and modest" },
-      { word: "perseverance", meaning: "continued effort despite difficulty" },
-      { word: "to look up to someone", meaning: "to admire and respect someone" },
-      { word: "self-made", meaning: "successful through one's own effort, not inherited advantage" },
-      { word: "resilient", meaning: "able to recover quickly from difficulties" },
-      { word: "words of wisdom", meaning: "advice that shows good judgement" },
-      { word: "trailblazer", meaning: "a person who is the first to do something new" }
-    ]
   },
   {
     category: "People",
@@ -29,18 +585,8 @@ const TOPICS = [
       "who this person is",
       "what they do",
       "how often you see them",
-      "and explain why you admire them"
+      "and explain why you admire them",
     ],
-    vocabulary: [
-      { word: "close-knit family", meaning: "a family with strong, caring relationships" },
-      { word: "breadwinner", meaning: "the main income earner in a family" },
-      { word: "supportive", meaning: "providing encouragement and help" },
-      { word: "hardworking", meaning: "putting in a lot of effort and energy" },
-      { word: "sacrifice", meaning: "giving something up for someone else's benefit" },
-      { word: "nurturing", meaning: "caring for and encouraging the growth of someone" },
-      { word: "wholeheartedly", meaning: "completely and sincerely" },
-      { word: "unconditional love", meaning: "love with no limits or conditions" }
-    ]
   },
   {
     category: "People",
@@ -49,18 +595,8 @@ const TOPICS = [
       "who this friend is",
       "how you met",
       "what you usually do together",
-      "and explain why you have stayed friends"
+      "and explain why you have stayed friends",
     ],
-    vocabulary: [
-      { word: "childhood friend", meaning: "a friend you have known since you were young" },
-      { word: "to hit it off", meaning: "to immediately like and get along with someone" },
-      { word: "inseparable", meaning: "always together, very close" },
-      { word: "trustworthy", meaning: "able to be relied on as honest" },
-      { word: "to keep in touch", meaning: "to maintain contact with someone" },
-      { word: "shared interests", meaning: "hobbies or topics both people enjoy" },
-      { word: "loyal", meaning: "faithful and supportive" },
-      { word: "reminisce", meaning: "to talk about pleasant memories from the past" }
-    ]
   },
   {
     category: "People",
@@ -69,19 +605,51 @@ const TOPICS = [
       "who this teacher was",
       "what subject they taught",
       "what was special about their teaching",
-      "and explain how they influenced you"
+      "and explain how they influenced you",
     ],
-    vocabulary: [
-      { word: "mentor", meaning: "an experienced person who advises a less experienced one" },
-      { word: "strict but fair", meaning: "demanding high standards while treating students justly" },
-      { word: "to instil (values)", meaning: "to gradually establish an idea or attitude in someone" },
-      { word: "approachable", meaning: "friendly and easy to talk to" },
-      { word: "thought-provoking", meaning: "stimulating careful thought" },
-      { word: "dedicated", meaning: "committed to a task or purpose" },
-      { word: "to broaden one's horizons", meaning: "to expand one's knowledge or experience" },
-      { word: "encouraging", meaning: "giving support and confidence" }
-    ]
   },
+  {
+    category: "People",
+    title: "Describe a neighbour you know",
+    cueCard: [
+      "who this neighbour is",
+      "how long you have known them",
+      "what they are like",
+      "and explain how you get on with them",
+    ],
+  },
+  {
+    category: "People",
+    title: "Describe someone you met recently",
+    cueCard: [
+      "who this person is",
+      "where and when you met them",
+      "what your first impression was",
+      "and explain why you remember meeting them",
+    ],
+  },
+  {
+    category: "People",
+    title: "Describe someone whose job benefits society",
+    cueCard: [
+      "who this person is",
+      "what their job involves",
+      "how their work helps other people",
+      "and explain why you respect what they do",
+    ],
+  },
+  {
+    category: "People",
+    title: "Describe a well-known person you admire",
+    cueCard: [
+      "who this person is",
+      "how you know about them",
+      "what they have achieved",
+      "and explain why you admire them",
+    ],
+  },
+
+  // Places
   {
     category: "Places",
     title: "Describe your hometown",
@@ -89,18 +657,8 @@ const TOPICS = [
       "where it is",
       "what it is famous for",
       "what it looks like",
-      "and explain how you feel about it"
+      "and explain how you feel about it",
     ],
-    vocabulary: [
-      { word: "picturesque", meaning: "visually attractive, like a picture" },
-      { word: "bustling", meaning: "full of busy activity" },
-      { word: "laid-back", meaning: "relaxed and easy-going" },
-      { word: "landmark", meaning: "a well-known building or feature that identifies a place" },
-      { word: "up-and-coming", meaning: "developing and likely to succeed" },
-      { word: "off the beaten track", meaning: "not well-known or often visited" },
-      { word: "urban sprawl", meaning: "the uncontrolled expansion of a city" },
-      { word: "sense of community", meaning: "a feeling of belonging among neighbours" }
-    ]
   },
   {
     category: "Places",
@@ -109,18 +667,8 @@ const TOPICS = [
       "where this place is",
       "how you learned about it",
       "what you would do there",
-      "and explain why you want to visit it"
+      "and explain why you want to visit it",
     ],
-    vocabulary: [
-      { word: "bucket-list destination", meaning: "a place you want to visit before you die" },
-      { word: "breathtaking", meaning: "astonishingly beautiful" },
-      { word: "off the grid", meaning: "remote, without normal services" },
-      { word: "immerse oneself in", meaning: "to become fully involved in something" },
-      { word: "hidden gem", meaning: "a wonderful place that is not well known" },
-      { word: "vibrant culture", meaning: "a lively and colourful way of life" },
-      { word: "must-see attraction", meaning: "something visitors should not miss" },
-      { word: "wanderlust", meaning: "a strong desire to travel" }
-    ]
   },
   {
     category: "Places",
@@ -129,18 +677,8 @@ const TOPICS = [
       "where it is",
       "how you found out about it",
       "what you do there",
-      "and explain why you find it peaceful"
+      "and explain why you find it peaceful",
     ],
-    vocabulary: [
-      { word: "tranquil", meaning: "calm and peaceful" },
-      { word: "sanctuary", meaning: "a place of safety or peace" },
-      { word: "to unwind", meaning: "to relax after stress or tension" },
-      { word: "secluded", meaning: "quiet and private, hidden away" },
-      { word: "recharge one's batteries", meaning: "to rest and regain energy" },
-      { word: "serenity", meaning: "the state of being calm and peaceful" },
-      { word: "escape the hustle and bustle", meaning: "to get away from busy, noisy life" },
-      { word: "idyllic", meaning: "extremely peaceful and picturesque" }
-    ]
   },
   {
     category: "Places",
@@ -149,19 +687,71 @@ const TOPICS = [
       "which country it is",
       "what you know about it",
       "what you would like to do there",
-      "and explain why you want to go there"
+      "and explain why you want to go there",
     ],
-    vocabulary: [
-      { word: "cultural heritage", meaning: "traditions and customs passed down over generations" },
-      { word: "cuisine", meaning: "a style of cooking associated with a place" },
-      { word: "exotic", meaning: "unusual and exciting because from a distant place" },
-      { word: "to broaden one's perspective", meaning: "to gain a wider view of the world" },
-      { word: "language barrier", meaning: "difficulty communicating due to different languages" },
-      { word: "culture shock", meaning: "disorientation from encountering an unfamiliar culture" },
-      { word: "melting pot", meaning: "a place where different cultures mix" },
-      { word: "itinerary", meaning: "a planned route or schedule for a trip" }
-    ]
   },
+  {
+    category: "Places",
+    title: "Describe a city you have visited",
+    cueCard: [
+      "which city it was",
+      "when you visited it",
+      "what you did there",
+      "and explain what you liked or disliked about it",
+    ],
+  },
+  {
+    category: "Places",
+    title: "Describe a countryside area you like",
+    cueCard: [
+      "where this area is",
+      "how often you go there",
+      "what it looks like",
+      "and explain why you like it",
+    ],
+  },
+  {
+    category: "Places",
+    title: "Describe your ideal home",
+    cueCard: [
+      "where it would be",
+      "what it would look like",
+      "who you would live there with",
+      "and explain why this would be your ideal home",
+    ],
+  },
+  {
+    category: "Places",
+    title: "Describe a good place to live",
+    cueCard: [
+      "where this place is",
+      "what makes it a good place to live",
+      "who lives there",
+      "and explain whether you would like to live there",
+    ],
+  },
+  {
+    category: "Places",
+    title: "Describe a new place you have discovered",
+    cueCard: [
+      "where this place is",
+      "how you discovered it",
+      "what it is like",
+      "and explain whether you want to go back",
+    ],
+  },
+  {
+    category: "Places",
+    title: "Describe a memorable long walk you went on",
+    cueCard: [
+      "where you walked",
+      "who you were with",
+      "what you saw along the way",
+      "and explain why the walk was memorable",
+    ],
+  },
+
+  // Objects
   {
     category: "Objects",
     title: "Describe a gift you received that you liked",
@@ -169,38 +759,8 @@ const TOPICS = [
       "what the gift was",
       "who gave it to you",
       "why they gave it to you",
-      "and explain why you liked it"
+      "and explain why you liked it",
     ],
-    vocabulary: [
-      { word: "sentimental value", meaning: "value based on emotional association, not price" },
-      { word: "thoughtful", meaning: "showing careful consideration for others" },
-      { word: "to treasure something", meaning: "to value something highly" },
-      { word: "heirloom", meaning: "a valuable object passed down through generations" },
-      { word: "unwrap", meaning: "to remove the wrapping from a gift" },
-      { word: "token of appreciation", meaning: "a gift given to show gratitude" },
-      { word: "cherished", meaning: "deeply and fondly valued" },
-      { word: "keepsake", meaning: "a small item kept in memory of someone or something" }
-    ]
-  },
-  {
-    category: "Objects",
-    title: "Describe a piece of technology you find useful",
-    cueCard: [
-      "what it is",
-      "how often you use it",
-      "what you use it for",
-      "and explain why you find it useful"
-    ],
-    vocabulary: [
-      { word: "indispensable", meaning: "absolutely necessary" },
-      { word: "user-friendly", meaning: "easy to use" },
-      { word: "streamline", meaning: "to make a process simpler and more efficient" },
-      { word: "cutting-edge", meaning: "most modern and advanced" },
-      { word: "to rely on", meaning: "to depend on something" },
-      { word: "glitch", meaning: "a small technical problem" },
-      { word: "multitask", meaning: "to do several things at the same time" },
-      { word: "labour-saving", meaning: "reducing the amount of work needed" }
-    ]
   },
   {
     category: "Objects",
@@ -209,39 +769,71 @@ const TOPICS = [
       "what it is",
       "when you got it",
       "when you wear it",
-      "and explain why you like it"
+      "and explain why you like it",
     ],
-    vocabulary: [
-      { word: "versatile", meaning: "able to be used in many different ways" },
-      { word: "understated", meaning: "simple and elegant, not showy" },
-      { word: "hand-me-down", meaning: "a used item passed from one person to another" },
-      { word: "tailored", meaning: "made to fit closely to someone's body" },
-      { word: "on-trend", meaning: "fashionable at the moment" },
-      { word: "comfort zone (in style)", meaning: "the familiar style one feels comfortable wearing" },
-      { word: "statement piece", meaning: "an item that stands out and expresses personality" },
-      { word: "well-worn", meaning: "showing signs of frequent use" }
-    ]
   },
   {
     category: "Objects",
-    title: "Describe a book that had a strong impact on you",
+    title: "Describe a pair of glasses you own or like",
     cueCard: [
-      "what the book was",
-      "what it was about",
-      "when you read it",
-      "and explain why it had a strong impact on you"
+      "what the glasses look like",
+      "when you got them",
+      "when you wear them",
+      "and explain why you like them",
     ],
-    vocabulary: [
-      { word: "page-turner", meaning: "a book that is exciting and hard to put down" },
-      { word: "thought-provoking", meaning: "causing careful thought" },
-      { word: "protagonist", meaning: "the main character in a story" },
-      { word: "gripping", meaning: "extremely exciting or interesting" },
-      { word: "to broaden one's outlook", meaning: "to expand one's way of thinking" },
-      { word: "plot twist", meaning: "an unexpected change in a story's direction" },
-      { word: "resonate with someone", meaning: "to have deep meaning or emotional connection for someone" },
-      { word: "profound", meaning: "having deep meaning or effect" }
-    ]
   },
+  {
+    category: "Objects",
+    title: "Describe a kite you have seen or flown",
+    cueCard: [
+      "what the kite looked like",
+      "where you saw or flew it",
+      "who you were with",
+      "and explain how you felt flying or watching it",
+    ],
+  },
+  {
+    category: "Objects",
+    title: "Describe a traditional product or craft from your country",
+    cueCard: [
+      "what the product or craft is",
+      "how it is made",
+      "who typically makes or uses it",
+      "and explain why it is important to your culture",
+    ],
+  },
+  {
+    category: "Objects",
+    title: "Describe a toy you had as a child",
+    cueCard: [
+      "what the toy was",
+      "who gave it to you",
+      "how you used to play with it",
+      "and explain why you remember it",
+    ],
+  },
+  {
+    category: "Objects",
+    title: "Describe something you cannot live without",
+    cueCard: [
+      "what it is",
+      "how long you have had it",
+      "how you use it",
+      "and explain why it is so important to you",
+    ],
+  },
+  {
+    category: "Objects",
+    title: "Describe a broken item you tried to fix",
+    cueCard: [
+      "what the item was",
+      "how it got broken",
+      "how you tried to fix it",
+      "and explain whether you succeeded",
+    ],
+  },
+
+  // Events
   {
     category: "Events",
     title: "Describe a memorable celebration you attended",
@@ -249,98 +841,50 @@ const TOPICS = [
       "what the celebration was",
       "where it took place",
       "who you celebrated with",
-      "and explain why it was memorable"
+      "and explain why it was memorable",
     ],
-    vocabulary: [
-      { word: "festive atmosphere", meaning: "a joyful, celebratory mood" },
-      { word: "get-together", meaning: "an informal social gathering" },
-      { word: "to let one's hair down", meaning: "to relax and enjoy oneself freely" },
-      { word: "extravagant", meaning: "elaborate and expensive" },
-      { word: "milestone", meaning: "a significant event or achievement" },
-      { word: "to reminisce", meaning: "to talk fondly about the past" },
-      { word: "unforgettable", meaning: "so remarkable it cannot be forgotten" },
-      { word: "gathering", meaning: "a meeting of people for a shared purpose" }
-    ]
   },
   {
     category: "Events",
-    title: "Describe an achievement you are proud of",
+    title: "Describe a competition you took part in",
     cueCard: [
-      "what the achievement was",
-      "when it happened",
-      "what you did to achieve it",
-      "and explain why you are proud of it"
+      "what the competition was",
+      "when and where it took place",
+      "how you prepared for it",
+      "and explain how you felt about the result",
     ],
-    vocabulary: [
-      { word: "milestone", meaning: "a significant point of progress" },
-      { word: "to overcome obstacles", meaning: "to successfully deal with difficulties" },
-      { word: "sense of accomplishment", meaning: "a feeling of satisfaction from achieving something" },
-      { word: "determination", meaning: "firmness of purpose" },
-      { word: "to pay off", meaning: "to result in success after effort" },
-      { word: "against all odds", meaning: "despite great difficulty" },
-      { word: "hard-earned", meaning: "gained through significant effort" },
-      { word: "breakthrough", meaning: "an important discovery or achievement" }
-    ]
   },
   {
     category: "Events",
+    title: "Describe a memorable lesson you had",
+    cueCard: [
+      "what the lesson was about",
+      "who taught it",
+      "what happened during the lesson",
+      "and explain why it was memorable",
+    ],
+  },
+  {
+    category: "Events",
+    title: "Describe a special meal you celebrated with others",
+    cueCard: [
+      "what the occasion was",
+      "who you shared the meal with",
+      "what food was served",
+      "and explain why the meal was special",
+    ],
+  },
+
+  // Experiences
+  {
+    category: "Experiences",
     title: "Describe a time you helped someone",
     cueCard: [
       "who you helped",
       "what the situation was",
       "what you did to help",
-      "and explain how you felt afterwards"
+      "and explain how you felt afterwards",
     ],
-    vocabulary: [
-      { word: "to lend a hand", meaning: "to help someone" },
-      { word: "compassionate", meaning: "feeling and showing concern for others" },
-      { word: "to go out of one's way", meaning: "to make a special effort to do something" },
-      { word: "selfless", meaning: "putting others' needs before one's own" },
-      { word: "gratifying", meaning: "giving satisfaction or pleasure" },
-      { word: "in need", meaning: "lacking basic necessities or requiring help" },
-      { word: "to make a difference", meaning: "to have a significant positive effect" },
-      { word: "empathy", meaning: "the ability to understand another's feelings" }
-    ]
-  },
-  {
-    category: "Events",
-    title: "Describe a journey that was memorable",
-    cueCard: [
-      "where you went",
-      "who you went with",
-      "what happened during the journey",
-      "and explain why it was memorable"
-    ],
-    vocabulary: [
-      { word: "road trip", meaning: "a journey made by car" },
-      { word: "scenic route", meaning: "a route with beautiful views" },
-      { word: "eventful", meaning: "full of interesting or important happenings" },
-      { word: "detour", meaning: "an alternative, indirect route" },
-      { word: "to set off", meaning: "to begin a journey" },
-      { word: "unforeseen circumstances", meaning: "unexpected events" },
-      { word: "once-in-a-lifetime", meaning: "an experience that happens only once" },
-      { word: "layover", meaning: "a short stop between parts of a journey" }
-    ]
-  },
-  {
-    category: "Experiences",
-    title: "Describe a time you learned a new skill",
-    cueCard: [
-      "what the skill was",
-      "how you learned it",
-      "how long it took",
-      "and explain how you felt about learning it"
-    ],
-    vocabulary: [
-      { word: "steep learning curve", meaning: "a skill that is difficult to learn quickly" },
-      { word: "hands-on experience", meaning: "practical, direct experience" },
-      { word: "trial and error", meaning: "learning by testing and correcting mistakes" },
-      { word: "to master a skill", meaning: "to become highly proficient at something" },
-      { word: "proficient", meaning: "highly skilled or competent" },
-      { word: "to pick something up", meaning: "to learn something informally" },
-      { word: "persistence", meaning: "continued effort despite difficulty" },
-      { word: "self-taught", meaning: "having learned something without formal instruction" }
-    ]
   },
   {
     category: "Experiences",
@@ -349,18 +893,8 @@ const TOPICS = [
       "what the decision was",
       "what the alternatives were",
       "how you made the decision",
-      "and explain why it was difficult"
+      "and explain why it was difficult",
     ],
-    vocabulary: [
-      { word: "to weigh up the pros and cons", meaning: "to carefully consider advantages and disadvantages" },
-      { word: "dilemma", meaning: "a difficult choice between two options" },
-      { word: "to be torn between", meaning: "to be unable to choose between two options" },
-      { word: "gut feeling", meaning: "an instinct rather than logical reasoning" },
-      { word: "to take the plunge", meaning: "to decide to do something risky" },
-      { word: "second thoughts", meaning: "doubts about a decision already made" },
-      { word: "life-changing", meaning: "having a significant impact on someone's life" },
-      { word: "no regrets", meaning: "not feeling sorry about a past choice" }
-    ]
   },
   {
     category: "Experiences",
@@ -369,18 +903,8 @@ const TOPICS = [
       "when this was",
       "where you were",
       "what happened",
-      "and explain why you felt so happy"
+      "and explain why you felt so happy",
     ],
-    vocabulary: [
-      { word: "overjoyed", meaning: "extremely happy" },
-      { word: "on cloud nine", meaning: "extremely happy, elated" },
-      { word: "elated", meaning: "very happy and excited" },
-      { word: "to beam with joy", meaning: "to smile radiantly, showing happiness" },
-      { word: "euphoric", meaning: "feeling intense excitement and happiness" },
-      { word: "heart-warming", meaning: "causing feelings of happiness and love" },
-      { word: "jump for joy", meaning: "to be extremely pleased" },
-      { word: "content", meaning: "in a state of peaceful happiness" }
-    ]
   },
   {
     category: "Experiences",
@@ -389,99 +913,477 @@ const TOPICS = [
       "what the news was",
       "how you received it",
       "who told you",
-      "and explain how you reacted"
+      "and explain how you reacted",
     ],
-    vocabulary: [
-      { word: "to break the news", meaning: "to tell someone important information" },
-      { word: "overwhelmed with joy", meaning: "having very strong feelings of happiness" },
-      { word: "long-awaited", meaning: "waited for over a long time" },
-      { word: "to sink in", meaning: "to be fully realised or understood gradually" },
-      { word: "ecstatic", meaning: "extremely happy and excited" },
-      { word: "a weight off one's shoulders", meaning: "a relief from worry or burden" },
-      { word: "unexpected", meaning: "not anticipated" },
-      { word: "celebrate in style", meaning: "to celebrate in a memorable, lavish way" }
-    ]
   },
   {
-    category: "Activities & Media",
-    title: "Describe a hobby you enjoy",
+    category: "Experiences",
+    title: "Describe an interesting discussion you had",
     cueCard: [
-      "what the hobby is",
-      "how long you have done it",
-      "how often you do it",
-      "and explain why you enjoy it"
+      "who you had the discussion with",
+      "what the topic was",
+      "what different opinions were shared",
+      "and explain why it was interesting",
     ],
-    vocabulary: [
-      { word: "pastime", meaning: "an activity done regularly for enjoyment" },
-      { word: "to unwind", meaning: "to relax" },
-      { word: "immersive", meaning: "deeply engaging, absorbing full attention" },
-      { word: "therapeutic", meaning: "having a calming, healing effect" },
-      { word: "enthusiast", meaning: "a person who is very interested in something" },
-      { word: "to hone a skill", meaning: "to refine and improve a skill" },
-      { word: "addictive", meaning: "extremely engaging, hard to stop doing" },
-      { word: "outlet (for creativity/stress)", meaning: "a way to express or release something" }
-    ]
   },
   {
-    category: "Activities & Media",
+    category: "Experiences",
+    title: "Describe a story someone told you",
+    cueCard: [
+      "who told you the story",
+      "what the story was about",
+      "when they told it to you",
+      "and explain why it stayed in your memory",
+    ],
+  },
+  {
+    category: "Experiences",
+    title: "Describe a time you were praised for your work",
+    cueCard: [
+      "what the work was",
+      "who praised you",
+      "what they said",
+      "and explain how it made you feel",
+    ],
+  },
+
+  // Media & communication
+  {
+    category: "Media & communication",
+    title: "Describe a book that had a strong impact on you",
+    cueCard: [
+      "what the book was",
+      "what it was about",
+      "when you read it",
+      "and explain why it had a strong impact on you",
+    ],
+  },
+  {
+    category: "Media & communication",
     title: "Describe a film that made an impression on you",
     cueCard: [
       "what the film was",
       "what it was about",
       "when you watched it",
-      "and explain why it made an impression on you"
+      "and explain why it made an impression on you",
     ],
-    vocabulary: [
-      { word: "gripping", meaning: "extremely exciting or engaging" },
-      { word: "plot twist", meaning: "an unexpected turn in the storyline" },
-      { word: "cinematography", meaning: "the art of film photography" },
-      { word: "thought-provoking", meaning: "causing serious thought" },
-      { word: "box-office hit", meaning: "a commercially very successful film" },
-      { word: "compelling", meaning: "evoking strong interest or attention" },
-      { word: "storyline", meaning: "the plot of a film or book" },
-      { word: "to leave a lasting impression", meaning: "to be remembered for a long time" }
-    ]
   },
   {
-    category: "Activities & Media",
+    category: "Media & communication",
     title: "Describe a piece of music you enjoy listening to",
     cueCard: [
       "what it is",
       "who performs it",
       "when you listen to it",
-      "and explain why you enjoy it"
+      "and explain why you enjoy it",
     ],
-    vocabulary: [
-      { word: "uplifting", meaning: "making one feel happier or more hopeful" },
-      { word: "catchy tune", meaning: "a melody that is easy to remember" },
-      { word: "to strike a chord", meaning: "to evoke a strong emotional response" },
-      { word: "soothing", meaning: "having a calming effect" },
-      { word: "nostalgic", meaning: "evoking sentimental memories of the past" },
-      { word: "on repeat", meaning: "listened to again and again" },
-      { word: "lyrics", meaning: "the words of a song" },
-      { word: "mood-lifting", meaning: "improving one's emotional state" }
-    ]
   },
   {
-    category: "Activities & Media",
+    category: "Media & communication",
+    title: "Describe a blogger or influencer you follow",
+    cueCard: [
+      "who this person is",
+      "what kind of content they create",
+      "how you discovered them",
+      "and explain why you enjoy following them",
+    ],
+  },
+  {
+    category: "Media & communication",
+    title: "Describe a traditional story or legend from your country",
+    cueCard: [
+      "what the story is about",
+      "who usually tells it",
+      "when you first heard it",
+      "and explain what it teaches or means",
+    ],
+  },
+  {
+    category: "Media & communication",
+    title: "Describe an app or website you use often",
+    cueCard: [
+      "what the app or website is",
+      "what you use it for",
+      "how often you use it",
+      "and explain why you find it useful",
+    ],
+  },
+
+  // Skills & learning
+  {
+    category: "Skills & learning",
+    title: "Describe a time you learned a new skill",
+    cueCard: [
+      "what the skill was",
+      "how you learned it",
+      "how long it took",
+      "and explain how you felt about learning it",
+    ],
+  },
+  {
+    category: "Skills & learning",
+    title: "Describe a skill you learned from an older person",
+    cueCard: [
+      "what the skill was",
+      "who taught it to you",
+      "how they taught you",
+      "and explain how you feel about having learned it",
+    ],
+  },
+  {
+    category: "Skills & learning",
+    title: "Describe your experience of learning another language",
+    cueCard: [
+      "which language you learned",
+      "how you started learning it",
+      "what methods you used",
+      "and explain how easy or difficult it was",
+    ],
+  },
+  {
+    category: "Skills & learning",
+    title: "Describe a memorable lesson you had at school",
+    cueCard: [
+      "what the lesson was about",
+      "who taught it",
+      "what made it memorable",
+      "and explain what you learned from it",
+    ],
+  },
+  {
+    category: "Skills & learning",
+    title: "Describe a subject you enjoyed studying",
+    cueCard: [
+      "what the subject was",
+      "when you studied it",
+      "why you enjoyed it",
+      "and explain how it has been useful to you",
+    ],
+  },
+  {
+    category: "Skills & learning",
+    title: "Describe a skill you would like to learn",
+    cueCard: [
+      "what the skill is",
+      "why you want to learn it",
+      "how you would learn it",
+      "and explain how it would help you",
+    ],
+  },
+
+  // Decisions & achievements
+  {
+    category: "Decisions & achievements",
+    title: "Describe an achievement you are proud of",
+    cueCard: [
+      "what the achievement was",
+      "when it happened",
+      "what you did to achieve it",
+      "and explain why you are proud of it",
+    ],
+  },
+  {
+    category: "Decisions & achievements",
+    title: "Describe a difficult decision that had a good result",
+    cueCard: [
+      "what the decision was",
+      "why it was difficult to make",
+      "what the result was",
+      "and explain why the result was positive",
+    ],
+  },
+  {
+    category: "Decisions & achievements",
+    title: "Describe an ambition you have not yet achieved",
+    cueCard: [
+      "what the ambition is",
+      "when you started wanting this",
+      "what has stopped you achieving it so far",
+      "and explain whether you still hope to achieve it",
+    ],
+  },
+  {
+    category: "Decisions & achievements",
+    title: "Describe a time your help made a real difference",
+    cueCard: [
+      "who you helped",
+      "what the situation was",
+      "what you did to help",
+      "and explain what difference it made",
+    ],
+  },
+  {
+    category: "Decisions & achievements",
+    title: "Describe a time you were praised for something you did",
+    cueCard: [
+      "what you did",
+      "who praised you",
+      "what they said",
+      "and explain how the praise made you feel",
+    ],
+  },
+  {
+    category: "Decisions & achievements",
+    title: "Describe a competition you would like to enter",
+    cueCard: [
+      "what the competition is",
+      "why it interests you",
+      "what you would need to do to prepare",
+      "and explain why you would like to enter it",
+    ],
+  },
+
+  // Food & experiences
+  {
+    category: "Food & experiences",
+    title: "Describe a special cake or meal you had",
+    cueCard: [
+      "what the cake or meal was",
+      "when you had it",
+      "who you shared it with",
+      "and explain why it was special",
+    ],
+  },
+  {
+    category: "Food & experiences",
+    title: "Describe a restaurant you enjoyed visiting",
+    cueCard: [
+      "where the restaurant is",
+      "what kind of food it serves",
+      "who you went with",
+      "and explain why you enjoyed it",
+    ],
+  },
+  {
+    category: "Food & experiences",
+    title: "Describe a time you tried food from another culture",
+    cueCard: [
+      "what the food was",
+      "where you tried it",
+      "who you were with",
+      "and explain what you thought of it",
+    ],
+  },
+  {
+    category: "Food & experiences",
+    title: "Describe a picnic or outdoor meal you had",
+    cueCard: [
+      "where you had the picnic or meal",
+      "who you were with",
+      "what food you ate",
+      "and explain why you remember it",
+    ],
+  },
+
+  // Time & routine
+  {
+    category: "Time & routine",
+    title: "Describe a busy or stressful time in your life",
+    cueCard: [
+      "when this time was",
+      "why it was so busy or stressful",
+      "how you dealt with it",
+      "and explain how you felt once it was over",
+    ],
+  },
+  {
+    category: "Time & routine",
+    title: "Describe something that helps you concentrate",
+    cueCard: [
+      "what it is",
+      "when you use it",
+      "how it helps you",
+      "and explain why it works well for you",
+    ],
+  },
+  {
+    category: "Time & routine",
+    title: "Describe a positive change in your life recently",
+    cueCard: [
+      "what the change was",
+      "when it happened",
+      "why it happened",
+      "and explain how it has affected you",
+    ],
+  },
+  {
+    category: "Time & routine",
+    title: "Describe a rule you dislike",
+    cueCard: [
+      "what the rule is",
+      "where this rule applies",
+      "why the rule exists",
+      "and explain why you dislike it",
+    ],
+  },
+  {
+    category: "Time & routine",
+    title: "Describe a free item or service you received",
+    cueCard: [
+      "what you received",
+      "who gave it to you",
+      "why you received it",
+      "and explain how you felt about it",
+    ],
+  },
+
+  // Travel & discovery
+  {
+    category: "Travel & discovery",
+    title: "Describe a journey that was memorable",
+    cueCard: [
+      "where you went",
+      "who you went with",
+      "what happened during the journey",
+      "and explain why it was memorable",
+    ],
+  },
+  {
+    category: "Travel & discovery",
+    title: "Describe a new place you discovered while travelling",
+    cueCard: [
+      "where this place is",
+      "how you discovered it while travelling",
+      "what you did there",
+      "and explain why it made an impression on you",
+    ],
+  },
+  {
+    category: "Travel & discovery",
+    title: "Describe a memorable walk you went on during a trip",
+    cueCard: [
+      "where you went on this walk",
+      "who you were travelling with",
+      "what you saw along the way",
+      "and explain why it was memorable",
+    ],
+  },
+  {
+    category: "Travel & discovery",
+    title: "Describe a countryside place you have visited",
+    cueCard: [
+      "where this place is",
+      "when you visited it",
+      "what you did there",
+      "and explain what you liked about it",
+    ],
+  },
+  {
+    category: "Travel & discovery",
+    title: "Describe an inexpensive day out you had",
+    cueCard: [
+      "where you went",
+      "who you went with",
+      "what you did there",
+      "and explain why it did not cost much",
+    ],
+  },
+  {
+    category: "Travel & discovery",
+    title: "Describe a quiet place you visited while travelling",
+    cueCard: [
+      "where this place is",
+      "how you found out about it",
+      "what you did there",
+      "and explain why it felt peaceful",
+    ],
+  },
+
+  // Nature & geography
+  {
+    category: "Nature & geography",
+    title: "Describe an important river or lake",
+    cueCard: [
+      "where this river or lake is",
+      "what it looks like",
+      "how people use it",
+      "and explain why it is important",
+    ],
+  },
+  {
+    category: "Nature & geography",
+    title: "Describe an interesting animal",
+    cueCard: [
+      "what the animal is",
+      "where it lives",
+      "what makes it interesting",
+      "and explain how you learned about it",
+    ],
+  },
+  {
+    category: "Nature & geography",
+    title: "Describe a natural environment or park you like",
+    cueCard: [
+      "where this place is",
+      "what it looks like",
+      "what you do there",
+      "and explain why you like it",
+    ],
+  },
+  {
+    category: "Nature & geography",
+    title: "Describe a time when the weather affected your plans",
+    cueCard: [
+      "what your plans were",
+      "what the weather was like",
+      "how it changed your plans",
+      "and explain how you felt about it",
+    ],
+  },
+
+  // Technology
+  {
+    category: "Technology",
+    title: "Describe a piece of technology you find useful",
+    cueCard: [
+      "what it is",
+      "how often you use it",
+      "what you use it for",
+      "and explain why you find it useful",
+    ],
+  },
+  {
+    category: "Technology",
+    title: "Describe a time you used your phone for something important",
+    cueCard: [
+      "what the situation was",
+      "how your phone helped",
+      "what would have happened without it",
+      "and explain how you felt afterwards",
+    ],
+  },
+  {
+    category: "Technology",
+    title: "Describe a piece of technology that changed your life",
+    cueCard: [
+      "what the technology is",
+      "when you started using it",
+      "how it has changed your daily life",
+      "and explain whether the change was positive",
+    ],
+  },
+
+  // Hobbies & Interests
+  {
+    category: "Hobbies & Interests",
+    title: "Describe a hobby you enjoy",
+    cueCard: [
+      "what the hobby is",
+      "how long you have done it",
+      "how often you do it",
+      "and explain why you enjoy it",
+    ],
+  },
+  {
+    category: "Hobbies & Interests",
     title: "Describe a sport you enjoy watching or playing",
     cueCard: [
       "what the sport is",
       "how you got interested in it",
       "how often you watch or play it",
-      "and explain why you enjoy it"
+      "and explain why you enjoy it",
     ],
-    vocabulary: [
-      { word: "adrenaline rush", meaning: "a sudden feeling of excitement and energy" },
-      { word: "team spirit", meaning: "a feeling of unity among team members" },
-      { word: "to root for a team", meaning: "to support a team enthusiastically" },
-      { word: "nail-biting finish", meaning: "an extremely tense and exciting ending" },
-      { word: "underdog", meaning: "a competitor expected to lose" },
-      { word: "stamina", meaning: "the ability to sustain prolonged physical effort" },
-      { word: "sportsmanship", meaning: "fair and generous behaviour in sport" },
-      { word: "to keep fit", meaning: "to maintain physical health through exercise" }
-    ]
-  }
+  },
 ];
 
 // Advanced grammatical structures useful for a 1-2 minute Part 2 monologue,
@@ -490,61 +1392,61 @@ const GRAMMAR_STRUCTURES = [
   {
     name: "Past Perfect Simple",
     explanation: "Use to show one past action happened before another past action.",
-    example: "By the time I arrived, the party had already started."
+    example: "By the time I arrived, the party had already started.",
   },
   {
     name: "Past Perfect Continuous",
     explanation: "Use to emphasise the duration of an action before another past event.",
-    example: "I had been studying English for two years before I took the test."
+    example: "I had been studying English for two years before I took the test.",
   },
   {
     name: "Present Perfect Continuous",
     explanation: "Use to describe an action that started in the past and continues, emphasising duration.",
-    example: "I've been learning to play the guitar since last summer."
+    example: "I've been learning to play the guitar since last summer.",
   },
   {
     name: "Future Perfect",
     explanation: "Use to describe an action that will be completed before a specific point in the future.",
-    example: "By next year, I will have finished my degree."
+    example: "By next year, I will have finished my degree.",
   },
   {
     name: "Used to / Would (past habits)",
     explanation: "Use to describe repeated past actions or states that no longer happen.",
-    example: "When I was a child, I used to visit my grandparents every weekend."
+    example: "When I was a child, I used to visit my grandparents every weekend.",
   },
   {
     name: "Third Conditional",
     explanation: "Use to talk about an imaginary past result of a past action that didn't happen.",
-    example: "If I hadn't missed the bus, I would have arrived on time."
+    example: "If I hadn't missed the bus, I would have arrived on time.",
   },
   {
     name: "Mixed Conditional",
     explanation: "Use to link a past condition to a present result, or a present condition to a past result.",
-    example: "If I hadn't studied abroad, I wouldn't be so confident speaking English now."
+    example: "If I hadn't studied abroad, I wouldn't be so confident speaking English now.",
   },
   {
     name: "Non-defining Relative Clause",
     explanation: "Use to add extra, non-essential information about a person, place, or thing.",
-    example: "My grandmother, who raised five children on her own, taught me perseverance."
+    example: "My grandmother, who raised five children on her own, taught me perseverance.",
   },
   {
     name: "Passive Voice (past)",
     explanation: "Use to focus on the action or result rather than who performed it.",
-    example: "The award was given to me in front of the whole school."
+    example: "The award was given to me in front of the whole school.",
   },
   {
     name: "Reported Speech",
     explanation: "Use to report what someone said without quoting them directly.",
-    example: "She told me that it was the best decision I would ever make."
+    example: "She told me that it was the best decision I would ever make.",
   },
   {
     name: "Cleft Sentence (What...)",
     explanation: "Use to add emphasis to a particular part of a sentence.",
-    example: "What really impressed me was her dedication to helping others."
+    example: "What really impressed me was her dedication to helping others.",
   },
   {
     name: "Participle Clause",
     explanation: "Use to combine two actions concisely, showing sequence or cause.",
-    example: "Having finished my exams, I decided to travel for a month."
-  }
+    example: "Having finished my exams, I decided to travel for a month.",
+  },
 ];
