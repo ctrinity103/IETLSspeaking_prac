@@ -41,13 +41,46 @@ function renderCard(topic, vocab, grammar) {
   document.getElementById("grammar-example").textContent = grammar.example;
 }
 
+function populateTopicSelect() {
+  const select = document.getElementById("topic-select");
+  select.innerHTML = "";
+
+  const randomOption = document.createElement("option");
+  randomOption.value = "";
+  randomOption.textContent = "🎲 Random topic";
+  select.appendChild(randomOption);
+
+  const categories = [...new Set(TOPICS.map((t) => t.category))];
+  categories.forEach((category) => {
+    const group = document.createElement("optgroup");
+    group.label = category;
+    TOPICS.filter((t) => t.category === category).forEach((topic) => {
+      const option = document.createElement("option");
+      option.value = topic.title;
+      option.textContent = topic.title;
+      group.appendChild(option);
+    });
+    select.appendChild(group);
+  });
+}
+
+function getSelectedTopic() {
+  const select = document.getElementById("topic-select");
+  if (!select.value) {
+    return pickRandom(TOPICS);
+  }
+  return TOPICS.find((t) => t.title === select.value);
+}
+
 function generatePracticeCard() {
-  const topic = pickRandom(TOPICS);
+  const topic = getSelectedTopic();
   const vocab = pickRandomN(topic.vocabulary, 4);
   const grammar = pickRandom(GRAMMAR_STRUCTURES);
   renderCard(topic, vocab, grammar);
 }
 
+populateTopicSelect();
 document.getElementById("generate-btn").addEventListener("click", generatePracticeCard);
+document.getElementById("topic-select").addEventListener("change", generatePracticeCard);
 
 generatePracticeCard();
