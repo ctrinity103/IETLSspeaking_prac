@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IELTS Speaking Part 2 Practice Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>IELTS Speaking Part 2 Generator</h1>
+    <p class="subtitle">Random topic, vocabulary and grammar structure for speaking practice</p>
+
+    <div class="card">
+      <span class="category" id="category"></span>
+      <h2 class="topic-title" id="topic-title"></h2>
+      <ul class="cue-card" id="cue-card"></ul>
+
+      <section>
+        <h2>Vocabulary to use</h2>
+        <ul class="vocab-list" id="vocab-list"></ul>
+      </section>
+
+      <section>
+        <h2>Grammar challenge</h2>
+        <div class="grammar-box">
+          <h3 id="grammar-name"></h3>
+          <p id="grammar-explanation"></p>
+          <p class="grammar-example" id="grammar-example"></p>
+        </div>
+      </section>
+
+      <button id="generate-btn">New Practice Card</button>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

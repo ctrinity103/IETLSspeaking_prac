@@ -1,0 +1,146 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f7f5f2;
+  --card-bg: #ffffff;
+  --text: #24292e;
+  --muted: #6a737d;
+  --accent: #b1372e;
+  --border: #e1ddd6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1b19;
+    --card-bg: #262421;
+    --text: #f0ece5;
+    --muted: #ab9d8c;
+    --accent: #e07a5f;
+    --border: #3a362f;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Georgia", "Times New Roman", serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 640px;
+}
+
+h1 {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--muted);
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.category {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.topic-title {
+  font-size: 1.35rem;
+  margin: 0 0 1rem 0;
+}
+
+.cue-card {
+  margin: 0 0 1.5rem 1.1rem;
+  padding: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+section h2 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.35rem;
+}
+
+.vocab-list {
+  margin: 0 0 1.5rem 1.1rem;
+  padding: 0;
+  line-height: 1.7;
+}
+
+.grammar-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.grammar-box h3 {
+  margin: 0 0 0.35rem 0;
+  color: var(--accent);
+  font-size: 1.05rem;
+}
+
+.grammar-box p {
+  margin: 0.25rem 0;
+  line-height: 1.5;
+}
+
+.grammar-example {
+  font-style: italic;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 0.85rem;
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:active {
+  opacity: 0.8;
+}
