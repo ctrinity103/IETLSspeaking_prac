@@ -1,40 +1,103 @@
+@font-face {
+  font-family: "Caveat";
+  font-style: normal;
+  font-weight: 500 800;
+  font-display: swap;
+  src: url("fonts/caveat.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/ibm-plex-mono-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/ibm-plex-mono-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/ibm-plex-mono-700.woff2") format("woff2");
+}
+
+/*
+  Concept: a typed IELTS cue card taped to a classroom board.
+  Light theme = whiteboard + red marker. Dark theme = chalkboard + yellow chalk.
+*/
+
 :root {
   color-scheme: light dark;
-  --bg: #f7f5f2;
-  --card-bg: #ffffff;
-  --text: #24292e;
-  --muted: #6a737d;
-  --accent: #b1372e;
-  --border: #e1ddd6;
+  --board: #eef1ec;
+  --board-line: rgba(70, 90, 80, 0.08);
+  --card-bg: #fdfcf7;
+  --ink: #262420;
+  --muted: #7a7568;
+  --accent: #cc4b3c;
+  --accent-ink: #ffffff;
+  --tape: rgba(230, 196, 84, 0.55);
+  --border: #ddd6c4;
+  --shadow: rgba(30, 40, 35, 0.16);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1c1b19;
-    --card-bg: #262421;
-    --text: #f0ece5;
-    --muted: #ab9d8c;
-    --accent: #e07a5f;
-    --border: #3a362f;
+    --board: #142720;
+    --board-line: rgba(255, 255, 255, 0.045);
+    --card-bg: #f6f1e3;
+    --ink: #2a2620;
+    --muted: #83795f;
+    --accent: #f2c14e;
+    --accent-ink: #2a2110;
+    --tape: rgba(242, 193, 78, 0.4);
+    --border: #e4dcc2;
+    --shadow: rgba(0, 0, 0, 0.45);
   }
 }
 
 :root[data-theme="dark"] {
-  --bg: #1c1b19;
-  --card-bg: #262421;
-  --text: #f0ece5;
-  --muted: #ab9d8c;
-  --accent: #e07a5f;
-  --border: #3a362f;
+  --board: #142720;
+  --board-line: rgba(255, 255, 255, 0.045);
+  --card-bg: #f6f1e3;
+  --ink: #2a2620;
+  --muted: #83795f;
+  --accent: #f2c14e;
+  --accent-ink: #2a2110;
+  --tape: rgba(242, 193, 78, 0.4);
+  --border: #e4dcc2;
+  --shadow: rgba(0, 0, 0, 0.45);
 }
 
 :root[data-theme="light"] {
-  --bg: #f7f5f2;
-  --card-bg: #ffffff;
-  --text: #24292e;
-  --muted: #6a737d;
-  --accent: #b1372e;
-  --border: #e1ddd6;
+  --board: #eef1ec;
+  --board-line: rgba(70, 90, 80, 0.08);
+  --card-bg: #fdfcf7;
+  --ink: #262420;
+  --muted: #7a7568;
+  --accent: #cc4b3c;
+  --accent-ink: #ffffff;
+  --tape: rgba(230, 196, 84, 0.55);
+  --border: #ddd6c4;
+  --shadow: rgba(30, 40, 35, 0.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
 * {
@@ -43,146 +106,267 @@
 
 body {
   margin: 0;
-  font-family: "Georgia", "Times New Roman", serif;
-  background: var(--bg);
-  color: var(--text);
+  min-height: 100vh;
+  font-family: "IBM Plex Mono", ui-monospace, "Courier New", monospace;
+  background:
+    radial-gradient(circle at 18% 22%, var(--board-line) 0, transparent 40%),
+    radial-gradient(circle at 82% 68%, var(--board-line) 0, transparent 45%),
+    radial-gradient(circle at 60% 12%, var(--board-line) 0, transparent 35%),
+    var(--board);
+  color: var(--ink);
   display: flex;
   justify-content: center;
-  padding: 2rem 1rem;
+  padding: 3rem 1.25rem;
+  transition: background 0.3s ease;
 }
 
 .wrap {
   width: 100%;
-  max-width: 640px;
+  max-width: 620px;
 }
 
 h1 {
-  font-size: 1.4rem;
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 1;
   text-align: center;
-  margin-bottom: 0.25rem;
+  margin: 0 0 0.35rem;
+  color: var(--accent);
+  text-wrap: balance;
+  transform: rotate(-1.5deg);
 }
 
 .subtitle {
   text-align: center;
   color: var(--muted);
-  margin-top: 0;
-  margin-bottom: 2rem;
-  font-size: 0.95rem;
+  margin: 0 0 2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .controls {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
+  margin: 0 auto 1.25rem;
+  max-width: 420px;
+  font-size: 0.8rem;
 }
 
 .controls label {
   color: var(--muted);
   white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.72rem;
 }
 
 .controls select {
   flex: 1;
-  padding: 0.5rem 0.6rem;
+  padding: 0.55rem 0.7rem;
   font-family: inherit;
-  font-size: 0.9rem;
-  color: var(--text);
+  font-size: 0.82rem;
+  color: var(--ink);
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.controls select:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .card {
+  position: relative;
   background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 1.75rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  padding: 2rem 1.85rem 1.85rem 2.35rem;
+  box-shadow: 0 14px 32px -10px var(--shadow);
+  color: var(--ink);
+  transform: rotate(-0.6deg);
+  animation: deal-card 0.5s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+}
+
+.card::before {
+  /* red margin rule, like a legal pad */
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 1.55rem;
+  width: 1px;
+  background: var(--accent);
+  opacity: 0.55;
+}
+
+.card::after {
+  /* washi tape */
+  content: "";
+  position: absolute;
+  top: -0.7rem;
+  left: 50%;
+  width: 4.5rem;
+  height: 1.4rem;
+  background: var(--tape);
+  transform: translateX(-50%) rotate(-2deg);
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+@keyframes deal-card {
+  from {
+    opacity: 0;
+    transform: rotate(-0.6deg) translateY(-14px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(-0.6deg) translateY(0) scale(1);
+  }
 }
 
 .category {
   display: inline-block;
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
 }
 
 .topic-title {
-  font-size: 1.35rem;
-  margin: 0 0 1rem 0;
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  color: var(--ink);
+  text-wrap: balance;
 }
 
 .cue-card {
-  margin: 0 0 1.5rem 1.1rem;
+  margin: 0 0 1.6rem 1.15rem;
   padding: 0;
   color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.85rem;
+  line-height: 1.9;
 }
 
 section h2 {
-  font-size: 0.85rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  font-weight: 700;
   color: var(--muted);
-  margin-bottom: 0.5rem;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.35rem;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px dashed var(--border);
 }
 
 .vocab-list {
-  margin: 0 0 1.5rem 1.1rem;
+  margin: 0 0 1.6rem 1.15rem;
   padding: 0;
-  line-height: 1.7;
+  line-height: 1.8;
+  font-size: 0.88rem;
+}
+
+.vocab-list li {
+  opacity: 0;
+  animation: reveal-word 0.4s ease both;
+  animation-delay: calc(var(--i, 0) * 90ms);
+}
+
+.vocab-list li strong {
+  background: linear-gradient(transparent 62%, var(--tape) 62%);
+  padding: 0 0.05rem;
+}
+
+@keyframes reveal-word {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .grammar-box {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem 1.25rem;
-  margin-bottom: 1.5rem;
+  position: relative;
+  background: transparent;
+  border: 1.5px dashed var(--accent);
+  border-radius: 3px;
+  padding: 1rem 1.15rem;
+  margin-bottom: 1.75rem;
+  transform: rotate(0.7deg);
 }
 
 .grammar-box h3 {
-  margin: 0 0 0.35rem 0;
+  margin: 0 0 0.35rem;
   color: var(--accent);
-  font-size: 1.05rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 .grammar-box p {
-  margin: 0.25rem 0;
-  line-height: 1.5;
+  margin: 0.3rem 0;
+  line-height: 1.55;
+  font-size: 0.85rem;
 }
 
 .grammar-example {
   font-style: italic;
+  color: var(--muted);
 }
 
 button {
   display: block;
   width: 100%;
-  padding: 0.85rem;
-  font-size: 1rem;
-  font-family: inherit;
-  font-weight: bold;
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
+  padding: 0.8rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px dashed var(--ink);
+  border-radius: 3px;
   cursor: pointer;
-  transition: opacity 0.15s ease;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.25s ease, border-color 0.25s ease;
+  z-index: 0;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  z-index: -1;
 }
 
 button:hover {
-  opacity: 0.9;
+  color: var(--accent-ink);
+  border-color: var(--accent);
+}
+
+button:hover::before {
+  transform: scaleX(1);
 }
 
 button:active {
-  opacity: 0.8;
+  transform: translateY(1px);
 }

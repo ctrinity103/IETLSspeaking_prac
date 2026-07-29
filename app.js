@@ -27,8 +27,9 @@ function renderCard(topic, vocab, grammar) {
 
   const vocabList = document.getElementById("vocab-list");
   vocabList.innerHTML = "";
-  vocab.forEach((item) => {
+  vocab.forEach((item, index) => {
     const li = document.createElement("li");
+    li.style.setProperty("--i", index);
     const strong = document.createElement("strong");
     strong.textContent = item.word;
     li.appendChild(strong);
@@ -39,6 +40,11 @@ function renderCard(topic, vocab, grammar) {
   document.getElementById("grammar-name").textContent = grammar.name;
   document.getElementById("grammar-explanation").textContent = grammar.explanation;
   document.getElementById("grammar-example").textContent = grammar.example;
+
+  const card = document.querySelector(".card");
+  card.style.animation = "none";
+  void card.offsetWidth;
+  card.style.animation = "";
 }
 
 function populateTopicSelect() {
