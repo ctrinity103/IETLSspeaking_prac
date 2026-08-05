@@ -577,6 +577,14 @@ const TOPICS = [
       "what they have done",
       "and explain why this person inspires you",
     ],
+    part3: [
+      "What kinds of people do young people usually admire?",
+      "Are celebrities good role models for young people?",
+      "Do you think people are more inspired by people they know personally or by public figures?",
+      "How can teachers inspire their students?",
+      "Does inspiration matter more than hard work when it comes to success?",
+      "Can a person be an inspiration without realising it?",
+    ],
   },
   {
     category: "People",
@@ -586,6 +594,14 @@ const TOPICS = [
       "what they do",
       "how often you see them",
       "and explain why you admire them",
+    ],
+    part3: [
+      "What qualities do people usually admire in their family members?",
+      "Do children admire their parents more when they are young or when they are older?",
+      "How has the role of the family changed in recent years?",
+      "Should family members always support each other, even when they disagree?",
+      "What can younger and older generations in a family learn from each other?",
+      "Is it becoming harder for families to spend time together?",
     ],
   },
   {
@@ -597,6 +613,14 @@ const TOPICS = [
       "what you usually do together",
       "and explain why you have stayed friends",
     ],
+    part3: [
+      "What do young people usually talk about with their friends?",
+      "Do you think talking face-to-face is always better than talking on the phone or online?",
+      "Why is it important to listen carefully when talking with friends?",
+      "In what situations do people need to talk to strangers in daily life?",
+      "Why do some people find it hard to talk to people they don't know?",
+      "Do people talk to strangers the same way they talk to friends?",
+    ],
   },
   {
     category: "People",
@@ -606,6 +630,14 @@ const TOPICS = [
       "what subject they taught",
       "what was special about their teaching",
       "and explain how they influenced you",
+    ],
+    part3: [
+      "What qualities make a good teacher?",
+      "Should teachers be strict or friendly with their students?",
+      "How has the relationship between teachers and students changed over time?",
+      "Do you think teachers influence students more than parents do?",
+      "Should students be allowed to choose their own teachers?",
+      "What impact does technology have on the role of teachers?",
     ],
   },
   {
@@ -617,6 +649,14 @@ const TOPICS = [
       "what they are like",
       "and explain how you get on with them",
     ],
+    part3: [
+      "How well do people usually know their neighbours in your country?",
+      "Is it more difficult for neighbours to get to know each other in large cities?",
+      "What are the benefits of living in a place where neighbours know each other well?",
+      "What can people do to make their neighbourhood a better place to live?",
+      "How can businesses help support local communities?",
+      "What negative effects does modern technology have on local communities?",
+    ],
   },
   {
     category: "People",
@@ -626,6 +666,14 @@ const TOPICS = [
       "where and when you met them",
       "what your first impression was",
       "and explain why you remember meeting them",
+    ],
+    part3: [
+      "Are there any good ways to meet new people in your country?",
+      "How do people behave politely when meeting new people?",
+      "How important is it to share the same interests when making new friends?",
+      "What are the most important qualities in a good friend?",
+      "Do people make their closest friendships at school?",
+      "How might the internet affect friendships in the future?",
     ],
   },
   {
@@ -637,6 +685,14 @@ const TOPICS = [
       "how their work helps other people",
       "and explain why you respect what they do",
     ],
+    part3: [
+      "Which jobs are well paid in your country?",
+      "What types of jobs are not paid enough?",
+      "Should young people earn as much as older people?",
+      "What can secondary or high schools do to prepare their students for work?",
+      "Is university a good place to learn about the world of work?",
+      "Should people continue to train all through their working lives?",
+    ],
   },
   {
     category: "People",
@@ -646,6 +702,14 @@ const TOPICS = [
       "how you know about them",
       "what they have achieved",
       "and explain why you admire them",
+    ],
+    part3: [
+      "Why are some children more popular than others at school?",
+      "What are the pros and cons of being popular at school?",
+      "Do you think students who are popular at school will still be popular when they grow up?",
+      "How important is it to be popular with colleagues at work?",
+      "Does a good boss have to be popular with their employees?",
+      "Are people often promoted more for their popularity than for their ability?",
     ],
   },
 
@@ -659,6 +723,14 @@ const TOPICS = [
       "what it looks like",
       "and explain how you feel about it",
     ],
+    part3: [
+      "How has your hometown changed over the years?",
+      "What do people in your hometown do to relax?",
+      "Do you think people are proud of the town or city they come from?",
+      "Why do some people prefer to move away from their hometown?",
+      "What are the benefits of small towns compared with big cities?",
+      "How can local governments make hometowns better places to live?",
+    ],
   },
   {
     category: "Places",
@@ -668,6 +740,14 @@ const TOPICS = [
       "how you learned about it",
       "what you would do there",
       "and explain why you want to visit it",
+    ],
+    part3: [
+      "How do people usually decide where to go on holiday?",
+      "Do you think it's better to plan a trip carefully or travel spontaneously?",
+      "What are the advantages of travelling with a group compared with travelling alone?",
+      "How has tourism changed since the internet became widely used?",
+      "Should governments limit the number of tourists visiting popular destinations?",
+      "How might space or virtual travel change tourism in the future?",
     ],
   },
   {
@@ -679,6 +759,14 @@ const TOPICS = [
       "what you do there",
       "and explain why you find it peaceful",
     ],
+    part3: [
+      "Why is the countryside generally quieter than cities?",
+      "Is it easy to find somewhere quiet in a large city?",
+      "Do older people prefer quiet places more than younger people do?",
+      "Are homes nowadays noisier than they used to be?",
+      "Why do many people prefer to have some kind of noise when they are studying or working?",
+      "What problems can noisy neighbours cause?",
+    ],
   },
   {
     category: "Places",
@@ -688,6 +776,14 @@ const TOPICS = [
       "what you know about it",
       "what you would like to do there",
       "and explain why you want to go there",
+    ],
+    part3: [
+      "What kinds of things do tourists like to do in cities?",
+      "What are the benefits for cities of having lots of tourists?",
+      "What are the disadvantages for people living in cities that are popular with tourists?",
+      "Why are so many young people drawn to city life?",
+      "Are cities better for young people than for old people?",
+      "How can people improve their quality of life in cities?",
     ],
   },
   {
@@ -699,6 +795,14 @@ const TOPICS = [
       "what you did there",
       "and explain what you liked or disliked about it",
     ],
+    part3: [
+      "What makes a city a pleasant place to live?",
+      "How do cities in your country differ from cities in other countries?",
+      "What problems do fast-growing cities usually face?",
+      "Should governments spend more money improving cities or the countryside?",
+      "How might cities change in the next few decades?",
+      "Do you think city life suits everyone?",
+    ],
   },
   {
     category: "Places",
@@ -708,6 +812,14 @@ const TOPICS = [
       "how often you go there",
       "what it looks like",
       "and explain why you like it",
+    ],
+    part3: [
+      "What are the most popular places in the countryside for people in your region to visit?",
+      "Who is most likely to enjoy visiting the countryside?",
+      "Do people visit the countryside more today than in the past?",
+      "Why do some people choose to live in the countryside?",
+      "What are the disadvantages of living in the countryside?",
+      "Are people who live in the countryside very different from people who live in cities?",
     ],
   },
   {
@@ -719,6 +831,14 @@ const TOPICS = [
       "who you would live there with",
       "and explain why this would be your ideal home",
     ],
+    part3: [
+      "What are the most popular types of homes where you live?",
+      "Do young and old people like the same types of houses or apartments?",
+      "What are the disadvantages of living in an apartment compared with living in a house?",
+      "Do people in your country generally rent or buy their home?",
+      "What are the advantages and disadvantages of owning a home?",
+      "Should governments be responsible for ensuring there is enough housing for the population to buy?",
+    ],
   },
   {
     category: "Places",
@@ -728,6 +848,14 @@ const TOPICS = [
       "what makes it a good place to live",
       "who lives there",
       "and explain whether you would like to live there",
+    ],
+    part3: [
+      "What kinds of places do people prefer to live in?",
+      "What are the advantages of living close to where you work?",
+      "What are the differences between the places older and younger people prefer to live in?",
+      "Why do some people choose to move to a different area?",
+      "What should people prepare before moving to a new place?",
+      "Do you think choosing where to live is one of the most important decisions in a person's life?",
     ],
   },
   {
@@ -739,6 +867,14 @@ const TOPICS = [
       "what it is like",
       "and explain whether you want to go back",
     ],
+    part3: [
+      "How do most children feel on their first day at a new school?",
+      "Why do many students move to a new city or country to study?",
+      "What difficulties can people have when they start working at a new company?",
+      "Why do so many people enjoy travelling to new places?",
+      "Is it important to find out a lot about a new place before travelling there?",
+      "Are there any negative effects of frequent international travel to new places?",
+    ],
   },
   {
     category: "Places",
@@ -748,6 +884,14 @@ const TOPICS = [
       "who you were with",
       "what you saw along the way",
       "and explain why the walk was memorable",
+    ],
+    part3: [
+      "What are the most popular outdoor leisure activities in your country?",
+      "What is the difference between outdoor activities that people do now and in the past?",
+      "How important are outdoor activities in helping children develop?",
+      "Why is leisure so important to people of all ages?",
+      "Do women today have less free time for leisure than men?",
+      "How might technology impact people's leisure time in the future?",
     ],
   },
 
@@ -761,6 +905,14 @@ const TOPICS = [
       "why they gave it to you",
       "and explain why you liked it",
     ],
+    part3: [
+      "What do people need to consider when buying a gift for another person?",
+      "What are some things that are difficult to choose for other people?",
+      "Do parents sometimes buy too many gifts for their children?",
+      "On what occasions is it important to give gifts?",
+      "Is there too much pressure to give expensive gifts on special occasions?",
+      "In what ways might buying and giving gifts change in the future?",
+    ],
   },
   {
     category: "Objects",
@@ -770,6 +922,14 @@ const TOPICS = [
       "when you got it",
       "when you wear it",
       "and explain why you like it",
+    ],
+    part3: [
+      "Why do some people wear different kinds of clothes for leisure and for work?",
+      "What are the advantages and disadvantages of uniforms for work and school?",
+      "What can people learn about someone from their clothes?",
+      "Why do people in different parts of the world wear different types of clothes?",
+      "On what occasions do people wear traditional national costumes?",
+      "Will everyone wear the same types of clothes in the future?",
     ],
   },
   {
@@ -781,6 +941,14 @@ const TOPICS = [
       "when you wear them",
       "and explain why you like them",
     ],
+    part3: [
+      "Why do some people choose to wear glasses instead of contact lenses?",
+      "Do you think glasses have become more of a fashion item nowadays?",
+      "How has eyewear technology changed in recent years?",
+      "Why are more young people needing glasses today than in the past?",
+      "Should schools do more to protect children's eyesight?",
+      "Do accessories like glasses say something about a person's personality?",
+    ],
   },
   {
     category: "Objects",
@@ -790,6 +958,14 @@ const TOPICS = [
       "where you saw or flew it",
       "who you were with",
       "and explain how you felt flying or watching it",
+    ],
+    part3: [
+      "What outdoor games or toys were popular when you were a child?",
+      "Why do children today spend less time playing outdoors than in the past?",
+      "What are the benefits of traditional games compared with video games?",
+      "Should schools encourage more outdoor play?",
+      "Do you think traditional toys will disappear in the future?",
+      "How can parents encourage children to enjoy simple, low-tech activities?",
     ],
   },
   {
@@ -801,6 +977,14 @@ const TOPICS = [
       "who typically makes or uses it",
       "and explain why it is important to your culture",
     ],
+    part3: [
+      "What kinds of traditional products are made in your country?",
+      "Do you think traditional products are usually of better quality than modern ones?",
+      "How can traditional products help boost a country's tourism industry?",
+      "How important is it for people to learn about their country's traditions?",
+      "Should young people be taught about traditions at home or at school?",
+      "Should tourists learn about a country's traditions before visiting that country?",
+    ],
   },
   {
     category: "Objects",
@@ -810,6 +994,14 @@ const TOPICS = [
       "who gave it to you",
       "how you used to play with it",
       "and explain why you remember it",
+    ],
+    part3: [
+      "Do boys and girls prefer different kinds of toys?",
+      "How do toys that were popular in the past compare with toys that are popular now?",
+      "Do children enjoy playing with household objects?",
+      "What should people consider when choosing a toy for a child?",
+      "Should children be allowed to choose their own toys at a toy store?",
+      "What are some reasons why parents buy their children a lot of toys?",
     ],
   },
   {
@@ -821,6 +1013,14 @@ const TOPICS = [
       "how you use it",
       "and explain why it is so important to you",
     ],
+    part3: [
+      "Why do children often have a favourite toy they take everywhere?",
+      "What are some reasons young people want to have the latest technology?",
+      "Why do some people find it difficult to throw or give anything away?",
+      "In what ways does the media influence people's decisions about what they buy?",
+      "Is there now too much choice when people buy products?",
+      "Why do some people buy things they don't really need?",
+    ],
   },
   {
     category: "Objects",
@@ -830,6 +1030,14 @@ const TOPICS = [
       "how it got broken",
       "how you tried to fix it",
       "and explain whether you succeeded",
+    ],
+    part3: [
+      "What kinds of things can people easily repair themselves?",
+      "When is it better to ask an expert to repair something?",
+      "Why is it sometimes not a good idea to pay for a repair?",
+      "Were products of better quality in the past?",
+      "Do you think some companies only intend for their products to last for a short time?",
+      "Are luxury brands always of better quality than cheaper brands?",
     ],
   },
 
@@ -843,6 +1051,14 @@ const TOPICS = [
       "who you celebrated with",
       "and explain why it was memorable",
     ],
+    part3: [
+      "What are some of the most important events in people's lives?",
+      "Do you think it's better to celebrate special occasions with a large group of people?",
+      "What can people do to make sure an event is successful?",
+      "In what ways do people celebrate important national events?",
+      "Why is it important to remember national events?",
+      "Is celebrating national events a waste of public money?",
+    ],
   },
   {
     category: "Events",
@@ -852,6 +1068,14 @@ const TOPICS = [
       "when and where it took place",
       "how you prepared for it",
       "and explain how you felt about the result",
+    ],
+    part3: [
+      "What are some popular competitions that ordinary people can take part in?",
+      "What kinds of people are more likely to join competitions?",
+      "Why are TV competitions becoming more popular?",
+      "In what kinds of jobs is it useful to be competitive?",
+      "Do you think people can learn to become more competitive?",
+      "Is it always a good idea to encourage competition at work?",
     ],
   },
   {
@@ -863,6 +1087,14 @@ const TOPICS = [
       "what happened during the lesson",
       "and explain why it was memorable",
     ],
+    part3: [
+      "What kinds of things do people have to remember every day?",
+      "Why are some people better at remembering things than other people?",
+      "Does technology mean people don't need to remember things anymore?",
+      "What do people often keep when they want to remember events in their lives?",
+      "Do words or pictures help people remember things more?",
+      "Why do two people sometimes remember the same event differently?",
+    ],
   },
   {
     category: "Events",
@@ -872,6 +1104,14 @@ const TOPICS = [
       "who you shared the meal with",
       "what food was served",
       "and explain why the meal was special",
+    ],
+    part3: [
+      "When do people eat special types of food in your country?",
+      "Should food for special occasions be different from everyday food?",
+      "Why do some people spend a lot of time preparing food for special occasions?",
+      "What is the importance of meals as an opportunity for families to communicate?",
+      "Why do some people not cook as much now as people did in the past?",
+      "Is there more good food available now than in the past?",
     ],
   },
 
@@ -885,6 +1125,14 @@ const TOPICS = [
       "what you did to help",
       "and explain how you felt afterwards",
     ],
+    part3: [
+      "What kind of help can people give to their neighbours?",
+      "How do schools encourage young people to help others?",
+      "Do you think people are naturally willing to help others?",
+      "Do you think everyone should do some volunteer work in their community?",
+      "What is the importance of volunteering time and donating money to help others?",
+      "Who do you think benefits more, the volunteers or the people they help?",
+    ],
   },
   {
     category: "Experiences",
@@ -894,6 +1142,14 @@ const TOPICS = [
       "what the alternatives were",
       "how you made the decision",
       "and explain why it was difficult",
+    ],
+    part3: [
+      "What kinds of important decisions do young people usually have to make?",
+      "Who are the best people to help teenagers make important decisions?",
+      "Should children of all ages be allowed to make some decisions on their own?",
+      "In what ways do other young people influence the decisions teenagers make?",
+      "How far does advertising influence people's everyday decisions?",
+      "Is it harder to make decisions because there is so much information on the internet?",
     ],
   },
   {
@@ -905,6 +1161,14 @@ const TOPICS = [
       "what happened",
       "and explain why you felt so happy",
     ],
+    part3: [
+      "How do people in your culture usually show that they are happy?",
+      "Do you think shopping can make people feel happy?",
+      "Do you think happiness is good for people's health?",
+      "How does a person's attitude to life affect how happy they feel?",
+      "Can people learn to be happy?",
+      "Can periods of unhappiness have positive results for some people?",
+    ],
   },
   {
     category: "Experiences",
@@ -914,6 +1178,14 @@ const TOPICS = [
       "how you received it",
       "who told you",
       "and explain how you reacted",
+    ],
+    part3: [
+      "How do people usually share good news with friends and family nowadays?",
+      "Is it better to share good news in person or online?",
+      "Why do people enjoy hearing good news about other people?",
+      "Do you think the news in the media focuses too much on bad news?",
+      "How does receiving good news affect a person's mood and motivation?",
+      "Should people be careful about how they share good news on social media?",
     ],
   },
   {
@@ -925,6 +1197,14 @@ const TOPICS = [
       "what different opinions were shared",
       "and explain why it was interesting",
     ],
+    part3: [
+      "At what age do young children start to have their own opinions?",
+      "What kinds of things do children have strong opinions about?",
+      "Should parents always consider their children's opinions?",
+      "In which jobs are excellent communication skills essential?",
+      "What is the importance of having good listening skills?",
+      "How easy is it for people to improve their communication skills?",
+    ],
   },
   {
     category: "Experiences",
@@ -935,6 +1215,14 @@ const TOPICS = [
       "when they told it to you",
       "and explain why it stayed in your memory",
     ],
+    part3: [
+      "What kinds of children's stories are popular in your country?",
+      "What stories do younger children and older children like?",
+      "Why do children like listening to stories?",
+      "How is technology used in storytelling today?",
+      "What are the benefits of using technology in storytelling?",
+      "Is reading stories better for a child's imagination than watching stories on TV or film?",
+    ],
   },
   {
     category: "Experiences",
@@ -944,6 +1232,14 @@ const TOPICS = [
       "who praised you",
       "what they said",
       "and explain how it made you feel",
+    ],
+    part3: [
+      "When should parents give encouragement to their children?",
+      "Why do children need encouragement?",
+      "Do you think it's possible to encourage children too much?",
+      "How important is positive and negative feedback in the way people work?",
+      "When do people say nice things that they don't really mean?",
+      "Why do some people believe positive comments about themselves more than negative comments?",
     ],
   },
 
@@ -957,6 +1253,14 @@ const TOPICS = [
       "when you read it",
       "and explain why it had a strong impact on you",
     ],
+    part3: [
+      "What kinds of books are most popular in your country?",
+      "Do you think reading fiction is as valuable as reading non-fiction?",
+      "How has the way people read books changed in recent years?",
+      "Should children be encouraged to read more than they use screens?",
+      "Are books still as influential as films or the internet in shaping people's ideas?",
+      "Do you think e-books will eventually replace printed books?",
+    ],
   },
   {
     category: "Media & communication",
@@ -966,6 +1270,14 @@ const TOPICS = [
       "what it was about",
       "when you watched it",
       "and explain why it made an impression on you",
+    ],
+    part3: [
+      "What kinds of films are most popular with young people in your country?",
+      "Do you think films can change the way people think about a subject?",
+      "What is the difference between watching a film at the cinema and at home?",
+      "Should films with a lot of violence be restricted?",
+      "How important are special effects to the success of a film?",
+      "Do you think streaming services have changed the film industry for the better?",
     ],
   },
   {
@@ -977,6 +1289,14 @@ const TOPICS = [
       "when you listen to it",
       "and explain why you enjoy it",
     ],
+    part3: [
+      "What different types of music are popular with young people in your country?",
+      "Do older people like the same kind of music as young people?",
+      "Are the words of a song more important than the music?",
+      "Why are singing competitions on TV popular in some countries?",
+      "What is the difference between going to a live concert and watching a concert on TV?",
+      "Does music make films and TV programmes more enjoyable?",
+    ],
   },
   {
     category: "Media & communication",
@@ -986,6 +1306,14 @@ const TOPICS = [
       "what kind of content they create",
       "how you discovered them",
       "and explain why you enjoy following them",
+    ],
+    part3: [
+      "What different types of media are popular in your country (e.g. radio, TV, social media)?",
+      "Are the same types of media important to young and old people?",
+      "Will people continue to read printed newspapers and magazines in the future?",
+      "What are the main reasons why people use social media?",
+      "Is it difficult to get to know someone well through social media?",
+      "How effective is advertising products on social media?",
     ],
   },
   {
@@ -997,6 +1325,14 @@ const TOPICS = [
       "when you first heard it",
       "and explain what it teaches or means",
     ],
+    part3: [
+      "What kinds of stories do children usually enjoy?",
+      "Why do some children like to listen to a story before going to sleep?",
+      "Do you think it is more enjoyable for children to read stories or to write them?",
+      "Do you agree that films need to have a good story to be successful?",
+      "How popular are films that are based on true stories?",
+      "Do you agree that films based on famous books are never as good as the books themselves?",
+    ],
   },
   {
     category: "Media & communication",
@@ -1006,6 +1342,14 @@ const TOPICS = [
       "what you use it for",
       "how often you use it",
       "and explain why you find it useful",
+    ],
+    part3: [
+      "What kinds of apps or websites do people use most in daily life?",
+      "How have apps changed the way people manage their daily tasks?",
+      "Do you think people spend too much time on their phones nowadays?",
+      "What are the risks of relying heavily on apps for everyday decisions?",
+      "Should there be more rules about how apps collect personal data?",
+      "How might apps and websites change the way people live in the future?",
     ],
   },
 
@@ -1019,6 +1363,14 @@ const TOPICS = [
       "how long it took",
       "and explain how you felt about learning it",
     ],
+    part3: [
+      "What kinds of skills are useful for people to learn nowadays?",
+      "Is it easier for children or adults to learn a new skill?",
+      "Should schools focus more on practical skills rather than academic subjects?",
+      "What role does practice play in mastering a new skill?",
+      "Do you think online courses are as effective as in-person classes for learning a skill?",
+      "How might the skills people need change in the future?",
+    ],
   },
   {
     category: "Skills & learning",
@@ -1028,6 +1380,14 @@ const TOPICS = [
       "who taught it to you",
       "how they taught you",
       "and explain how you feel about having learned it",
+    ],
+    part3: [
+      "What types of things can children learn from older people, such as grandparents?",
+      "Why do children often enjoy learning things from older people?",
+      "Do children learn better from adults who are not their parents?",
+      "What kinds of help do older people need?",
+      "Who are the best people to help older people?",
+      "Who benefits more, the older people or the people who help them?",
     ],
   },
   {
@@ -1039,6 +1399,14 @@ const TOPICS = [
       "what methods you used",
       "and explain how easy or difficult it was",
     ],
+    part3: [
+      "What are the most difficult things about learning a new language?",
+      "Is it easier for younger or older people to learn a language?",
+      "What are the best ways of learning a language?",
+      "What are the benefits of learning a foreign language?",
+      "Is speaking other languages more important today than it used to be in the past?",
+      "How might learning a new language change people's view of their own society?",
+    ],
   },
   {
     category: "Skills & learning",
@@ -1048,6 +1416,14 @@ const TOPICS = [
       "who taught it",
       "what made it memorable",
       "and explain what you learned from it",
+    ],
+    part3: [
+      "What kinds of things do people have to remember every day?",
+      "Why are some people better at remembering things than other people?",
+      "Does technology mean people don't need to remember things anymore?",
+      "What do people often keep when they want to remember events in their lives?",
+      "Do words or pictures help people remember things more?",
+      "Why do two people sometimes remember the same event differently?",
     ],
   },
   {
@@ -1059,6 +1435,14 @@ const TOPICS = [
       "why you enjoyed it",
       "and explain how it has been useful to you",
     ],
+    part3: [
+      "What subjects are most popular with students in your country?",
+      "Should students be allowed to choose all the subjects they study?",
+      "Do you think practical subjects are as important as academic ones?",
+      "How can teachers make a difficult subject more enjoyable?",
+      "Should schools place more emphasis on subjects like art and music?",
+      "Does enjoying a subject at school affect how well students perform in it?",
+    ],
   },
   {
     category: "Skills & learning",
@@ -1068,6 +1452,14 @@ const TOPICS = [
       "why you want to learn it",
       "how you would learn it",
       "and explain how it would help you",
+    ],
+    part3: [
+      "What new skills do people commonly want to learn as adults?",
+      "Is it more important to master one skill deeply or to learn many skills?",
+      "What obstacles stop people from learning new skills later in life?",
+      "How has technology made it easier to learn new skills?",
+      "Should companies help employees learn new skills for their jobs?",
+      "Do you think lifelong learning is becoming more important in modern society?",
     ],
   },
 
@@ -1081,6 +1473,14 @@ const TOPICS = [
       "what you did to achieve it",
       "and explain why you are proud of it",
     ],
+    part3: [
+      "What kinds of achievements do people in your country value most?",
+      "Do you think personal achievements are more satisfying than academic ones?",
+      "Should parents praise children for every achievement, big or small?",
+      "How does achieving a goal affect a person's confidence?",
+      "Is it healthy for people to compare their achievements with others?",
+      "Do you think society places too much value on success and achievement?",
+    ],
   },
   {
     category: "Decisions & achievements",
@@ -1090,6 +1490,14 @@ const TOPICS = [
       "why it was difficult to make",
       "what the result was",
       "and explain why the result was positive",
+    ],
+    part3: [
+      "What kinds of important decisions do young people usually have to make?",
+      "Who are the best people to help teenagers make important decisions?",
+      "Should children of all ages be allowed to make some decisions on their own?",
+      "In what ways do other young people influence the decisions teenagers make?",
+      "How far does advertising influence people's everyday decisions?",
+      "Is it harder to make decisions because there is so much information on the internet?",
     ],
   },
   {
@@ -1101,6 +1509,14 @@ const TOPICS = [
       "what has stopped you achieving it so far",
       "and explain whether you still hope to achieve it",
     ],
+    part3: [
+      "What kinds of ambitions do children often have when they are young?",
+      "How important is it for children to have ambitions?",
+      "Can being too ambitious be bad for children?",
+      "Why are people ambitious at work?",
+      "What qualities do ambitious people need to succeed in the workplace?",
+      "Can it sometimes cause problems if people are too ambitious at work?",
+    ],
   },
   {
     category: "Decisions & achievements",
@@ -1110,6 +1526,14 @@ const TOPICS = [
       "what the situation was",
       "what you did to help",
       "and explain what difference it made",
+    ],
+    part3: [
+      "What kind of help can people give to their neighbours?",
+      "How do schools encourage young people to help others?",
+      "Do you think people are naturally willing to help others?",
+      "Do you think everyone should do some volunteer work in their community?",
+      "What is the importance of volunteering time and donating money to help others?",
+      "Who do you think benefits more, the volunteers or the people they help?",
     ],
   },
   {
@@ -1121,6 +1545,14 @@ const TOPICS = [
       "what they said",
       "and explain how the praise made you feel",
     ],
+    part3: [
+      "When should parents give encouragement to their children?",
+      "Why do children need encouragement?",
+      "Do you think it's possible to encourage children too much?",
+      "How important is positive and negative feedback in the way people work?",
+      "When do people say nice things that they don't really mean?",
+      "Why do some people believe positive comments about themselves more than negative comments?",
+    ],
   },
   {
     category: "Decisions & achievements",
@@ -1130,6 +1562,14 @@ const TOPICS = [
       "why it interests you",
       "what you would need to do to prepare",
       "and explain why you would like to enter it",
+    ],
+    part3: [
+      "What are some popular competitions that ordinary people can take part in?",
+      "What kinds of people are more likely to join competitions?",
+      "Why are TV competitions becoming more popular?",
+      "In what kinds of jobs is it useful to be competitive?",
+      "Do you think people can learn to become more competitive?",
+      "Is it always a good idea to encourage competition at work?",
     ],
   },
 
@@ -1143,6 +1583,14 @@ const TOPICS = [
       "who you shared it with",
       "and explain why it was special",
     ],
+    part3: [
+      "When do people eat special types of food in your country?",
+      "Should food for special occasions be different from everyday food?",
+      "Why do some people spend a lot of time preparing food for special occasions?",
+      "What is the importance of meals as an opportunity for families to communicate?",
+      "Why do some people not cook as much now as people did in the past?",
+      "Is there more good food available now than in the past?",
+    ],
   },
   {
     category: "Food & experiences",
@@ -1152,6 +1600,14 @@ const TOPICS = [
       "what kind of food it serves",
       "who you went with",
       "and explain why you enjoyed it",
+    ],
+    part3: [
+      "How often do people in your country eat out at restaurants?",
+      "What factors do people usually consider when choosing a restaurant?",
+      "Do you think eating out is becoming more popular than cooking at home?",
+      "How has online reviewing changed the restaurant industry?",
+      "What are the advantages and disadvantages of fast food restaurants?",
+      "Do you think dining habits will change much in the future?",
     ],
   },
   {
@@ -1163,6 +1619,14 @@ const TOPICS = [
       "who you were with",
       "and explain what you thought of it",
     ],
+    part3: [
+      "How has foreign food become more popular in your country in recent years?",
+      "Do you think it's important to try local food when travelling?",
+      "Why are some people reluctant to try food from other cultures?",
+      "How does food help people understand a foreign culture better?",
+      "Should schools teach children about food from different countries?",
+      "Do you think globalisation is making food around the world more similar?",
+    ],
   },
   {
     category: "Food & experiences",
@@ -1172,6 +1636,14 @@ const TOPICS = [
       "who you were with",
       "what food you ate",
       "and explain why you remember it",
+    ],
+    part3: [
+      "Why do people enjoy eating outdoors rather than indoors?",
+      "What kinds of places are popular for picnics in your country?",
+      "How do outdoor meals differ from meals at home or in a restaurant?",
+      "What preparations do people need to make for a successful picnic?",
+      "Do you think eating outdoors is becoming less common nowadays?",
+      "How does spending time in nature affect people's wellbeing?",
     ],
   },
 
@@ -1185,6 +1657,14 @@ const TOPICS = [
       "how you dealt with it",
       "and explain how you felt once it was over",
     ],
+    part3: [
+      "Do very young children in your country study too hard at school?",
+      "Do you think young children learn more from playing than from classroom lessons?",
+      "Do children need long school holidays?",
+      "What are the advantages and disadvantages of having a heavy workload?",
+      "How can companies reward employees who work long hours?",
+      "What impact does time pressure have on the quality of work people do?",
+    ],
   },
   {
     category: "Time & routine",
@@ -1194,6 +1674,14 @@ const TOPICS = [
       "when you use it",
       "how it helps you",
       "and explain why it works well for you",
+    ],
+    part3: [
+      "Why is it important for children to learn how to concentrate?",
+      "Why do children have to concentrate when doing sports?",
+      "Do you think technology is harmful to children's concentration?",
+      "In which types of jobs is being able to concentrate particularly important?",
+      "Why do some people find it hard to concentrate at work?",
+      "What can employers do to help their staff concentrate?",
     ],
   },
   {
@@ -1205,6 +1693,14 @@ const TOPICS = [
       "why it happened",
       "and explain how it has affected you",
     ],
+    part3: [
+      "What changes do people make in their daily routines?",
+      "Do younger people enjoy changing their daily routines more than older people do?",
+      "Is it a good thing for people to keep changing their daily routines?",
+      "Do you think people should change jobs from time to time?",
+      "Is getting promoted at work always a positive change?",
+      "In what ways can working in a different country change someone's way of seeing the world?",
+    ],
   },
   {
     category: "Time & routine",
@@ -1215,6 +1711,14 @@ const TOPICS = [
       "why the rule exists",
       "and explain why you dislike it",
     ],
+    part3: [
+      "Why do schools need to have rules?",
+      "What types of rules do children often have to follow at home?",
+      "Are there more rules for children nowadays than in the past?",
+      "Does everybody probably break a law at some point in their life?",
+      "What kinds of penalties are appropriate for minor offences, like parking in the wrong place?",
+      "Is it always wrong to break the law?",
+    ],
   },
   {
     category: "Time & routine",
@@ -1224,6 +1728,14 @@ const TOPICS = [
       "who gave it to you",
       "why you received it",
       "and explain how you felt about it",
+    ],
+    part3: [
+      "What kinds of things do companies give away as free gifts?",
+      "What are some reasons why companies give free gifts?",
+      "Are people always pleased to receive a free gift?",
+      "What kinds of free services should the government offer all citizens?",
+      "Does the government need to provide good public transport for the whole country?",
+      "How can giving free higher education to everybody benefit a country?",
     ],
   },
 
@@ -1237,6 +1749,14 @@ const TOPICS = [
       "what happened during the journey",
       "and explain why it was memorable",
     ],
+    part3: [
+      "What kinds of journeys do people in your country often take?",
+      "Do you think the journey itself can be as enjoyable as the destination?",
+      "How has travel become easier in recent decades?",
+      "What are the benefits of travelling by train compared with flying?",
+      "Do you think long journeys are more tiring or more relaxing than short ones?",
+      "How might transport change the way people travel in the future?",
+    ],
   },
   {
     category: "Travel & discovery",
@@ -1246,6 +1766,14 @@ const TOPICS = [
       "how you discovered it while travelling",
       "what you did there",
       "and explain why it made an impression on you",
+    ],
+    part3: [
+      "How do most children feel on their first day at a new school?",
+      "Why do many students move to a new city or country to study?",
+      "What difficulties can people have when they start working at a new company?",
+      "Why do so many people enjoy travelling to new places?",
+      "Is it important to find out a lot about a new place before travelling there?",
+      "Are there any negative effects of frequent international travel to new places?",
     ],
   },
   {
@@ -1257,6 +1785,14 @@ const TOPICS = [
       "what you saw along the way",
       "and explain why it was memorable",
     ],
+    part3: [
+      "What are the most popular outdoor leisure activities in your country?",
+      "What is the difference between outdoor activities that people do now and in the past?",
+      "How important are outdoor activities in helping children develop?",
+      "Why is leisure so important to people of all ages?",
+      "Do women today have less free time for leisure than men?",
+      "How might technology impact people's leisure time in the future?",
+    ],
   },
   {
     category: "Travel & discovery",
@@ -1266,6 +1802,14 @@ const TOPICS = [
       "when you visited it",
       "what you did there",
       "and explain what you liked about it",
+    ],
+    part3: [
+      "What are the most popular places in the countryside for people in your region to visit?",
+      "Who is most likely to enjoy visiting the countryside?",
+      "Do people visit the countryside more today than in the past?",
+      "Why do some people choose to live in the countryside?",
+      "What are the disadvantages of living in the countryside?",
+      "Are people who live in the countryside very different from people who live in cities?",
     ],
   },
   {
@@ -1277,6 +1821,14 @@ const TOPICS = [
       "what you did there",
       "and explain why it did not cost much",
     ],
+    part3: [
+      "Where do people in your country usually go for a day out?",
+      "Why do people like going out for the day?",
+      "How can people enjoy a day out without actually going outside?",
+      "How does the weather affect how much people enjoy going out?",
+      "What is the difference between going out alone and going out with friends?",
+      "How important is it to spend money to make a day out enjoyable?",
+    ],
   },
   {
     category: "Travel & discovery",
@@ -1286,6 +1838,14 @@ const TOPICS = [
       "how you found out about it",
       "what you did there",
       "and explain why it felt peaceful",
+    ],
+    part3: [
+      "Why is the countryside generally quieter than cities?",
+      "Is it easy to find somewhere quiet in a large city?",
+      "Do older people prefer quiet places more than younger people do?",
+      "Are homes nowadays noisier than they used to be?",
+      "Why do many people prefer to have some kind of noise when they are studying or working?",
+      "What problems can noisy neighbours cause?",
     ],
   },
 
@@ -1299,6 +1859,14 @@ const TOPICS = [
       "how people use it",
       "and explain why it is important",
     ],
+    part3: [
+      "What are some popular water sports?",
+      "Why do people enjoy spending time near water?",
+      "Do you think all children should learn how to swim at school?",
+      "What kinds of jobs are related to rivers?",
+      "Why are rivers important for tourism?",
+      "What are the advantages and disadvantages of using rivers to transport people in cities?",
+    ],
   },
   {
     category: "Nature & geography",
@@ -1308,6 +1876,14 @@ const TOPICS = [
       "where it lives",
       "what makes it interesting",
       "and explain how you learned about it",
+    ],
+    part3: [
+      "What animals are most popular as pets in your country?",
+      "Should wild animals be kept in zoos?",
+      "Why is it important to protect endangered species?",
+      "How does habitat loss affect wildlife populations?",
+      "What can individuals do to help protect animals and their environments?",
+      "Do you think attitudes towards animal welfare are changing?",
     ],
   },
   {
@@ -1319,6 +1895,14 @@ const TOPICS = [
       "what you do there",
       "and explain why you like it",
     ],
+    part3: [
+      "Why are parks and green spaces important in cities?",
+      "How do people in your country usually spend time in nature?",
+      "What effects does spending time in nature have on people's mental health?",
+      "Should governments invest more in protecting natural environments?",
+      "How is urban development affecting natural environments in your country?",
+      "Do you think future generations will have less access to nature than we do now?",
+    ],
   },
   {
     category: "Nature & geography",
@@ -1328,6 +1912,14 @@ const TOPICS = [
       "what the weather was like",
       "how it changed your plans",
       "and explain how you felt about it",
+    ],
+    part3: [
+      "How does the weather affect people's daily activities in your country?",
+      "Do you think people talk about the weather more than other topics?",
+      "How has climate change affected weather patterns in recent years?",
+      "What can people do to prepare for extreme weather events?",
+      "Should schools and workplaces close during severe weather?",
+      "How might weather forecasting improve in the future?",
     ],
   },
 
@@ -1341,6 +1933,14 @@ const TOPICS = [
       "what you use it for",
       "and explain why you find it useful",
     ],
+    part3: [
+      "What piece of technology do most people use every day?",
+      "How has technology changed the way people communicate?",
+      "Do you think people rely too much on technology nowadays?",
+      "What are the disadvantages of depending on technology in daily life?",
+      "How can older people be encouraged to use new technology?",
+      "What new technology do you think will become common in the near future?",
+    ],
   },
   {
     category: "Technology",
@@ -1351,6 +1951,14 @@ const TOPICS = [
       "what would have happened without it",
       "and explain how you felt afterwards",
     ],
+    part3: [
+      "What do people usually use their phones for in daily life?",
+      "Do you think calling people is still the main use of phones?",
+      "How do younger and older people use their phones differently?",
+      "Do you think it's okay to call someone late at night?",
+      "Should phone calls in public places be banned because they disturb others?",
+      "Do people speak more honestly on the phone than face-to-face?",
+    ],
   },
   {
     category: "Technology",
@@ -1360,6 +1968,14 @@ const TOPICS = [
       "when you started using it",
       "how it has changed your daily life",
       "and explain whether the change was positive",
+    ],
+    part3: [
+      "What do you think is the most useful invention people have at home?",
+      "Do you think using household equipment makes people lazier?",
+      "What kinds of equipment might people want to have at home in the future?",
+      "What types of technology are most important in schools today?",
+      "Can watching television programmes in class be a good way of learning?",
+      "Will computers one day completely replace teachers?",
     ],
   },
 
@@ -1373,6 +1989,14 @@ const TOPICS = [
       "how often you do it",
       "and explain why you enjoy it",
     ],
+    part3: [
+      "What hobbies are most popular among young people in your country?",
+      "Do you think hobbies are important for a person's wellbeing?",
+      "How do people usually discover a new hobby?",
+      "Are hobbies today very different from hobbies in the past?",
+      "Should schools encourage students to develop hobbies outside of academic subjects?",
+      "Do you think people have less free time for hobbies than they used to?",
+    ],
   },
   {
     category: "Hobbies & Interests",
@@ -1382,6 +2006,14 @@ const TOPICS = [
       "how you got interested in it",
       "how often you watch or play it",
       "and explain why you enjoy it",
+    ],
+    part3: [
+      "What sports are most popular in your country?",
+      "Do you think schools should place more emphasis on sport?",
+      "What are the benefits of playing sport compared with just watching it?",
+      "How has professional sport changed because of television and the media?",
+      "Should top athletes be paid as much as they are?",
+      "Do you think sport can help bring people from different backgrounds together?",
     ],
   },
 ];
